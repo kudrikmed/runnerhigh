@@ -1,0 +1,65 @@
+{
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist@1.2.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-geolocation": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-geolocation@2.4.3"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-googlemaps": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mapsplugin/cordova-plugin-googlemaps",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {
+            "API_KEY_FOR_ANDROID": "AIzaSyDvVPJfAHmlNGYALOCn-wrWJaEDgX8Wqx4",
+            "API_KEY_FOR_IOS": "AIzaSyDvVPJfAHmlNGYALOCn-wrWJaEDgX8Wqx4"
+        }
+    },
+    "cordova-plugin-firebase": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/arnesson/cordova-plugin-firebase",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-android-firebase-gradle-release": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dpa99c/cordova-android-firebase-gradle-release",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-android-play-services-gradle-release": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dpa99c/cordova-android-play-services-gradle-release",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

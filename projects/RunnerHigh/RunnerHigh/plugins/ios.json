@@ -1,0 +1,32 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "io.cordova.myapp41018d"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.myapp41018d"
+        },
+        "cordova-plugin-firebase": {
+            "PACKAGE_NAME": "io.cordova.myapp41018d"
+        },
+        "cordova-android-firebase-gradle-release": {
+            "PACKAGE_NAME": "io.cordova.myapp41018d"
+        },
+        "cordova-android-play-services-gradle-release": {
+            "PACKAGE_NAME": "io.cordova.runnerhigh"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.myapp41018d"
+        }
+    }
+}

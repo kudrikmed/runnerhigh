@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тег FORM</title>
+</head>
+<body>
+
+<form action="createnews.php" method="post">
+    <div>
+        <label for="newsheader">Header of the news:</label>
+        <input type="text" id="newsheader" name="newsheader">
+    </div>
+    <div>
+        <label for="newsmain">Main text:</label>
+        <textarea rows="10" cols="50" id="newsmain" name="newsmain"></textarea>
+    </div>
+    <div>
+        <label for="newsurl">Url of the news:</label>
+        <input type="text" id="newsurl" name="newsurl">
+    </div>
+    <div>
+        <label for="newspictureurl">Url of the picture:</label>
+        <input type="text" id="newspictureurl" name="newspictureurl">
+    </div>
+
+    <p><b>Language</b></p>
+    <p><input type="radio" name="newslanguage" value="eng">English<Br>
+        <input type="radio" name="newslanguage" value="rus">Русский<Br>
+
+    <p><input type="submit"></p>
+</form>
+
+</body>
+</html>
