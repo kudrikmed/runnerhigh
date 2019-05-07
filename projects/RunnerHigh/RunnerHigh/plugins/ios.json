@@ -22,6 +22,9 @@
         },
         "cordova-android-play-services-gradle-release": {
             "PACKAGE_NAME": "io.cordova.runnerhigh"
+        },
+        "cordova-support-google-services": {
+            "PACKAGE_NAME": "io.cordova.runnerhigh"
         }
     },
     "dependent_plugins": {

@@ -498,6 +498,11 @@ $$('#my-login-screen .login-button').on('click', function () {
     });
 
 
+// Âûבמנ ןנמדנאללû
+$$('#selecthabitprogramm').on('click', function () {
+    console.log('habit formation programm selected');
+    localStorage.setItem('programm', 'habit');
+});
 
 // Registration screen
 $$('#createNewAcc').on('click', function () {
