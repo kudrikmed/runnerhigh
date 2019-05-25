@@ -45,9 +45,7 @@ var app  = new Framework7({
 });
 
 // Init/Create views
-var homeView = app.views.create('#view-home', {
-  url: '/'
-});
+
 /*
 var catalogView = app.views.create('#view-catalog', {
   url: '/catalog/'
@@ -89,6 +87,15 @@ else
 {
  
     console.log('Not first start of the app');
+    app.tab.show('#view-runtracker', false);
+    if (navigator.geolocation) {
+        console.log("runtracker tab is opened");
+        watchIDStatic = navigator.geolocation.watchPosition(displayStaticLocation, displayError, navigatorOptionsStatic);
+
+        if (window.DeviceOrientationEvent) {
+            console.log("DeviceOrientation is supported");
+        }
+    };
 }
 
 var coordsArray = [];  // массив для сохранения данных о координатах
@@ -99,6 +106,8 @@ var watchIDSteps = null; // глобальная переменная отслеживания акселерометра
 var speed = 0; // переменная скорости перемещения
 var myMap = null; // глобальная переменная, содержащая нашу карту
 var stepsCount = 0; // количество пройденных шагов
+var targetDopamine = 0; // целевое значение дофамина на тренировку
+var currentDopamine = 0; // текущий уровень дофамина
 
 
 var pedometerOptions = {
@@ -107,14 +116,14 @@ var pedometerOptions = {
 
 var navigatorOptions = {
     enableHighAccuracy: true,       // определяет точность геолокации
-    timeout: 1000,                  // максимальное время для вычисления позиции, Infinity для бесконечности   
-    maximumAge: 0                   // срок годности кэшированных данных о месторасположении
+    timeout: 3000,                  // максимальное время для вычисления позиции, Infinity для бесконечности   
+    maximumAge: 1000                   // срок годности кэшированных данных о месторасположении
 };
 
 var navigatorOptionsStatic = {
     enableHighAccuracy: true,       // определяет точность геолокации
-    timeout: 1000,                  // максимальное время для вычисления позиции, Infinity для бесконечности   
-    maximumAge: 0                   // срок годности кэшированных данных о месторасположении
+    timeout: 3000,                  // максимальное время для вычисления позиции, Infinity для бесконечности   
+    maximumAge: 1000                   // срок годности кэшированных данных о месторасположении
 };
 
 
@@ -138,6 +147,7 @@ $$('#fabstart').on('click', function () {
         navigator.geolocation.clearWatch(watchIDStatic); //передаем значение watchID при его наличии для остановки отслеживания
         watchIDStatic = null;
         watchID = navigator.geolocation.watchPosition(displayLocation, displayError, navigatorOptions); // используются те же обработчики, что и для функции getCurrentPosition
+        startStop();
         console.log("Tracking...");            
     }
 
@@ -154,7 +164,7 @@ $$('#fabstop').on('click', function () {
         console.log("Tracking stopped");
         $$('#speed').text('-');
         $$('#traveledDistance').text('-');
-       
+        startStop();
         window.removeEventListener("devicemotion", processAccelerationEvent);
 
         watchIDStatic = navigator.geolocation.watchPosition(displayStaticLocation, displayError, navigatorOptionsStatic);
@@ -169,10 +179,12 @@ function displayStaticLocation(position) { // загрузка карты при запуске приложе
         console.log('displayStaticLocation()');
         var latitude = position.coords.latitude; // у объекта position есть свойство coords, содержащее значения широты и долготы, точности их определения
         var longitude = position.coords.longitude;
-     
-        myMap = L.map('map', { center: [latitude, longitude], zoom: 16 });
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'OpenStreetMap' }).addTo(myMap);
 
+
+        if (!myMap) {
+            myMap = L.map('map', { center: [latitude, longitude], zoom: 16 });
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'OpenStreetMap' }).addTo(myMap);
+        };
        // $$('#fabgps').removeClass('color-yellow');
         $$('#fabgps').addClass('color-green');  // меняет цвет fab кнопки на зеленый при успешном подключении к gps
 
@@ -214,12 +226,18 @@ function displayLocation(position) { // данный обработчик вызывается, когда брау
     var latitude = position.coords.latitude; // у объекта position есть свойство coords, содержащее значения широты и долготы, точности их определения
     var longitude = position.coords.longitude;
     var speed = position.coords.speed;
+
+    var gender = 0;
+    if (localStorage.getItem('gender') == 'Male')
+    { gender = 1 };
     
   
     $$('#speed').text((speed * 3.6).toFixed(1) + " km/h");
     $$('#accuracy').text(position.coords.accuracy.toFixed(0));
-    $$('#adrenalin').text(predictneuronet([15, 90], [1, 60]));  // аргументы ([время мин, ЧСС], [пол (0 - женский, 1 - мужской), Vo2 max // 40-60-80])
 
+    $$('#dopamine').text(predictdopamine([0, (60 + (speed * 3.6) + tripDistance / 200)], [gender, 60]).toFixed(1));
+    $$('#adrenalin').text(predictadrenaline([0, (60 + (speed * 3.6) + tripDistance / 200)], [gender, 60]).toFixed(1));  // аргументы ([время мин, ЧСС], [пол (0 - женский, 1 - мужской), Vo2 max // 40-60-80])
+    $$('#noradrenalin').text(predictnoradrenaline([0, (60 + (speed * 3.6) + tripDistance / 200)], [gender, 60]).toFixed(1));
     // Calculate distance from last position if available
     var lastPos = coordsArray[coordsArray.length - 1];
     if (lastPos) {
@@ -234,15 +252,16 @@ function displayLocation(position) { // данный обработчик вызывается, когда брау
     $$('#traveledDistance').text((tripDistance/1000).toFixed(1)+' km');
   
 
-   
+    if (!myMap) {
         myMap = L.map('map', { center: [latitude, longitude], zoom: 16 });
         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '@OpenStreetMap' }).addTo(myMap);
-    //    L.tileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', { attribution: 'OpenStreetMap' }).addTo(myMap);
-   /*     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-            maxZoom: 18,
-            id: 'mapbox.streets'
-        }).addTo(myMap);
-   */
+        //    L.tileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', { attribution: 'OpenStreetMap' }).addTo(myMap);
+        /*     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                 maxZoom: 18,
+                 id: 'mapbox.streets'
+             }).addTo(myMap);
+        */
+    }
 }
 
 
@@ -258,7 +277,7 @@ function displayError(error) { // обработчик ошибок
     if (error.code == 0 || error.code == 2) {
         errorMessage = errorMessage + " " + error.message;
     }
-   console.log(errorMessage.stringify());
+   console.log(errorMessage);
    
 }
 
@@ -408,13 +427,7 @@ $$('#view-profile').on('tab:show', function (e) {
 
     // безопасная ЧСС  https://chelmetar.ru/raznoe/raschet-zon-chss-raschyot-pulsa-chss-dlya-raznyx-zon-nagruzki.html
 
-    // расчет возраста
-    /*
-    var birthday = Date.parse(localStorage.getItem('birthday'));
-    var ageDifMs = Date.now() - birthday;
-    var ageDate = new Date(ageDifMs);
-    var ageYears = (Math.abs(ageDate.getUTCFullYear() - 1970));
-    */
+ 
     var ageYears = calculateAge();
 
     var safeHR = 205.8 - (0.685 * ageYears);   // формула Robergs & Landwehr
@@ -433,7 +446,562 @@ $$('#view-profile').on('tab:show', function (e) {
     bfphtml.innerHTML = Math.round(bfp) + "%";
 });
 
+// программы
+$$('#view-programms').on('tab:show', function (e) {
 
+    if (localStorage.getItem('programm') == 'beginner') {
+        beginnerProgramm();
+    }
+    else {
+        showProgramms();
+    }
+});
+
+function showProgramms() {
+
+    var programmsView = document.getElementById('programmview');
+    programmsView.innerHTML = "";
+
+    var beginnerCard = document.createElement('div');
+    beginnerCard.className = "card card-expandable";
+    programmsView.appendChild(beginnerCard);
+
+
+    var beginnerCardContent = document.createElement('div');
+    beginnerCardContent.className = "card-content";
+    beginnerCard.appendChild(beginnerCardContent);
+
+    var background = document.createElement('div');
+    background.style = "background: url(./images/cordova.png) no-repeat center bottom; background-size: cover; height: 240px"
+    beginnerCardContent.appendChild(background);
+
+    var newCloseButton = document.createElement('a');
+    newCloseButton.href = "#";
+    newCloseButton.className = "link card-close card-opened-fade-in color-white";
+    newCloseButton.style = "position: absolute; right: 15px; top: 15px";
+    beginnerCardContent.appendChild(newCloseButton);
+
+    var iconCloseButton = document.createElement('i');
+    iconCloseButton.className = "icon f7-icons";
+    iconCloseButton.innerHTML = "close_round_filled";
+    newCloseButton.appendChild(iconCloseButton);
+
+    // название для программы beginner
+    var beginnerHeader = document.createElement('div');
+    beginnerHeader.className = "card-header display-block"; beginnerHeader.style = "height: 40px color: white; backgroung-color: pink";
+    beginnerHeader.innerHTML = 'Easy start';
+    beginnerCardContent.appendChild(beginnerHeader);
+
+    // создание тела программы
+    var beginnerBody = document.createElement('div');
+    beginnerBody.className = "card-content-padding";
+    beginnerBody.innerHTML = 'Short description of Easy Start programm';
+    beginnerCardContent.appendChild(beginnerBody);
+
+    //создание ряда с двумя столбцами
+    var newBeginnerRow = document.createElement('div');
+    newBeginnerRow.className = "row";
+    beginnerCardContent.appendChild(newBeginnerRow);
+
+
+    var leftBeginnerCol = document.createElement('div');
+    leftBeginnerCol.className = "col-50";
+    newBeginnerRow.appendChild(leftBeginnerCol);
+
+
+    var rightBeginnerCol = document.createElement('div');
+    rightBeginnerCol.className = "col-50";
+    newBeginnerRow.appendChild(rightBeginnerCol);
+
+    // кнопка выбрать программу для начинающих
+    var selectBeginnerButton = document.createElement('a');
+    selectBeginnerButton.className = "button button-fill button-round button-large card-close";
+    selectBeginnerButton.id = "selectbeginnerprogramm";
+    selectBeginnerButton.innerHTML = "Select";
+    leftBeginnerCol.appendChild(selectBeginnerButton);
+
+    //выбор программы
+    selectBeginnerButton.onclick = function (e) {
+
+            localStorage.setItem('beginnerday' + 1, 'current');
+        for (var i = 2; i <= 21; i++) {
+            localStorage.setItem('beginnerday' + i, 'not finished');
+        }
+        programmsView.innerHTML = "";        
+        localStorage.setItem('programm', 'beginner');
+        beginnerProgramm();
+        
+    }
+
+    // кнопка закрыть карточку
+    var closeBeginnerButton = document.createElement('a');
+    closeBeginnerButton.href = "#";
+    closeBeginnerButton.className = "button button-fill button-round button-large card-close";
+    closeBeginnerButton.innerHTML = "Close";
+    rightBeginnerCol.appendChild(closeBeginnerButton);
+}
+
+
+function beginnerProgramm() {
+
+
+    var Days = [];
+    for (var i = 1; i <= 21; i++) {
+        if (localStorage.getItem('beginnerday' + i) == 'complete') {
+            Days.push({
+                title: 'Day ' + i,
+                subtitle: 'complete',
+                class: 'item-content'
+            });
+        }
+        if (localStorage.getItem('beginnerday' + i) == 'current')
+        {
+            Days.push({
+                title: 'Day ' + i,
+                subtitle: 'current',
+                class: 'item-link item-content popup-open'
+            });
+        }
+        if (localStorage.getItem('beginnerday' + i) == 'not finished') {
+            Days.push({
+                title: 'Day ' + i,
+                subtitle: 'not finished',
+                class: 'item-content'
+            });
+        }
+    }
+
+   
+    var beginnerView = document.getElementById('programmview');
+    beginnerView.innerHTML = "";
+
+    var beginnerList = document.createElement('div');
+    beginnerList.className = "list virtual-list media-list";
+    beginnerList.id = "beginnervirtuallist";
+    beginnerView.appendChild(beginnerList);
+
+    var beginnerVirtualList = app.virtualList.create({
+        el: '#beginnervirtuallist',
+        items: Days,
+        height: 68,
+        itemTemplate:
+        '<li>' +
+        '<a href="#" id="{{title}}" data-popup="#beginner-popup" class="{{class}}">' +
+        '<div class="item-inner">' +
+        '<div class="item-title-row">' +
+        '<div class="item-title">{{title}}</div>' +
+        '</div>' +
+        '<div class="item-subtitle">{{subtitle}}</div>' +
+        '</div>' +
+        '</a>' +
+        '</li>'
+    });
+
+   
+}
+
+$$('#beginner-popup').on('popup:open', function () {
+  
+    if (navigator.geolocation) {
+        console.log("Navigation is ok");
+        navigator.geolocation.clearWatch(watchIDStatic); //передаем значение watchID при его наличии для остановки отслеживания
+        watchIDStatic = null;
+        watchID = navigator.geolocation.watchPosition(beginnerRunning, displayError, navigatorOptions); // используются те же обработчики, что и для функции getCurrentPosition
+    }
+
+    startStop();
+
+   // localStorage.setItem('beginnerday1', 'complete');
+
+    var i = 1;
+    while (localStorage.getItem('beginnerday' + i) != 'not finished')
+    {
+        i++;
+    }
+    
+        
+});
+
+function beginnerRunning(position) {
+    
+    var latitude = position.coords.latitude; // у объекта position есть свойство coords, содержащее значения широты и долготы, точности их определения
+    var longitude = position.coords.longitude;
+    var speed = position.coords.speed;
+
+   
+
+    $$('#beginnerSpeed').text((speed * 3.6).toFixed(1) + " km/h");
+
+    currentDopamine = predictdopamine([0, (60 + (speed * 3.6) + tripDistance / 200)], [gender, 60]).toFixed(1);
+
+
+    $$('#beginnerDopamine').text(currentDopamine);  // аргументы ([время мин, ЧСС], [пол (0 - женский, 1 - мужской), Vo2 max // 40-60-80])
+
+
+    var gender = 0;
+    if (localStorage.getItem('gender') == 'Male')
+    { gender = 1 };
+
+
+
+    var day;
+    for (day = 1; day <= 21; day++) {
+        if (localStorage.getItem('beginnerday' + day) == 'current') {
+            break;
+        }
+    }
+
+    // собственно программа тренировки
+    switch (day) {
+        case 1:
+            if (gender == 0)
+            { targetDopamine = 40 };
+            if (gender == 1)
+            { targetDopamine = 40 };
+            break;
+
+        case 2:
+            if (gender == 0)
+            { targetDopamine = 41 };
+            if (gender == 1)
+            { targetDopamine = 41 };
+            break;
+        case 3:
+            if (gender == 0)
+            { targetDopamine = 42 };
+            if (gender == 1)
+            { targetDopamine = 42 };
+            break;
+        case 4:
+            if (gender == 0)
+            { targetDopamine = 43 };
+            if (gender == 1)
+            { targetDopamine = 43 };
+            break;
+        case 5:
+            if (gender == 0)
+            { targetDopamine = 45 };
+            if (gender == 1)
+            { targetDopamine = 45 };
+            break;
+        case 6:
+            if (gender == 0)
+            { targetDopamine = 46 };
+            if (gender == 1)
+            { targetDopamine = 46 };
+            break;
+
+        case 7:
+            if (gender == 0)
+            { targetDopamine = 47 };
+            if (gender == 1)
+            { targetDopamine = 47 };
+            break;
+        case 8:
+            if (gender == 0)
+            { targetDopamine = 48 };
+            if (gender == 1)
+            { targetDopamine = 48 };
+            break;
+        case 9:
+            if (gender == 0)
+            { targetDopamine = 49 };
+            if (gender == 1)
+            { targetDopamine = 49 };
+            break;
+        case 10:
+            if (gender == 0)
+            { targetDopamine = 50 };
+            if (gender == 1)
+            { targetDopamine = 50 };
+            break;
+        case 11:
+            if (gender == 0)
+            { targetDopamine = 51 };
+            if (gender == 1)
+            { targetDopamine = 51 };
+            break;
+
+        case 12:
+            if (gender == 0)
+            { targetDopamine = 52 };
+            if (gender == 1)
+            { targetDopamine = 52 };
+            break;
+        case 13:
+            if (gender == 0)
+            { targetDopamine = 54 };
+            if (gender == 1)
+            { targetDopamine = 54 };
+            break;
+        case 14:
+            if (gender == 0)
+            { targetDopamine = 56 };
+            if (gender == 1)
+            { targetDopamine = 56 };
+            break;
+        case 15:
+            if (gender == 0)
+            { targetDopamine = 58 };
+            if (gender == 1)
+            { targetDopamine = 58 };
+            break;
+        case 16:
+            if (gender == 0)
+            { targetDopamine = 60 };
+            if (gender == 1)
+            { targetDopamine = 60 };
+            break;
+
+        case 17:
+            if (gender == 0)
+            { targetDopamine = 61 };
+            if (gender == 1)
+            { targetDopamine = 61 };
+            break;
+        case 18:
+            if (gender == 0)
+            { targetDopamine = 62 };
+            if (gender == 1)
+            { targetDopamine = 62 };
+            break;
+        case 19:
+            if (gender == 0)
+            { targetDopamine = 64 };
+            if (gender == 1)
+            { targetDopamine = 64 };
+            break;
+        case 20:
+            if (gender == 0)
+            { targetDopamine = 65 };
+            if (gender == 1)
+            { targetDopamine = 65 };
+            break;
+    }
+    $$('#targetDopamine').text(targetDopamine);
+    // Calculate distance from last position if available
+    var lastPos = coordsArray[coordsArray.length - 1];
+    if (lastPos) {
+        if (speed > 0 || position.coords.accuracy < 5) {
+            tripDistance += computeDistance(lastPos, position.coords);
+            // Add new coordinates to array
+            coordsArray.push(position.coords);
+        }
+    }
+    $$('#beginnerTraveledDistance').text((tripDistance / 1000).toFixed(1) + ' km');
+
+   
+    
+}
+
+// секундомер
+
+var base = 60;
+var clocktimer, dateObj, dh, dm, ds, ms;
+var readout = '';
+var h = 1, m = 1, tm = 1, s = 0, ts = 0, ms = 0, init = 0;
+
+//функция для очистки поля
+function clearClock() {
+    clearTimeout(clocktimer);
+    h = 1; m = 1; tm = 1; s = 0; ts = 0; ms = 0;
+    init = 0;
+    readout = '00:00:00.00';
+    $$('#beginnerTime').text(readout);
+}
+
+//функция для старта секундомера
+function startTIME() {
+    var cdateObj = new Date();
+    var t = (cdateObj.getTime() - dateObj.getTime()) - (s * 1000);
+    if (t > 999) { s++; }
+    if (s >= (m * base)) {
+        ts = 0;
+        m++;
+    } else {
+        ts = parseInt((ms / 100) + s);
+        if (ts >= base) { ts = ts - ((m - 1) * base); }
+    }
+    if (m > (h * base)) {
+        tm = 1;
+        h++;
+    } else {
+        tm = parseInt((ms / 100) + m);
+        if (tm >= base) { tm = tm - ((h - 1) * base); }
+    }
+    ms = Math.round(t / 10);
+    if (ms > 99) { ms = 0; }
+    if (ms == 0) { ms = '00'; }
+    if (ms > 0 && ms <= 9) { ms = '0' + ms; }
+    if (ts > 0) { ds = ts; if (ts < 10) { ds = '0' + ts; } } else { ds = '00'; }
+    dm = tm - 1;
+    if (dm > 0) { if (dm < 10) { dm = '0' + dm; } } else { dm = '00'; }
+    dh = h - 1;
+    if (dh > 0) { if (dh < 10) { dh = '0' + dh; } } else { dh = '00'; }
+    readout = dh + ':' + dm + ':' + ds + '.' + ms;
+
+    $$('#beginnerTime').text(readout);
+    $$('#time').text(readout);
+
+    clocktimer = setTimeout("startTIME()", 10);
+}
+
+//Функция запуска и остановки
+function startStop() {
+    if (init == 0) {
+        clearClock();
+        dateObj = new Date();
+        startTIME();
+        init = 1;
+    } else {
+        clearTimeout(clocktimer);
+        init = 0;
+    }
+} 
+
+
+
+// сменить программу тренировок через панель
+$$('#changeprogramm').on('click', function () {
+
+    localStorage.setItem('programm', "");
+    showProgramms();
+    app.panel.close('right', true);
+});
+
+// закрыть popup для начинающих
+$$('#closebeginnerpopup').on('click', function () {
+   
+    app.popup.close('#beginner-popup', true);
+});
+
+$$('#beginnerfab').on('click', function () {
+    if (watchID) {
+        navigator.geolocation.clearWatch(watchID); //передаем значение watchID при его наличии для остановки отслеживания
+        watchID = null;
+        watchIDStatic = navigator.geolocation.watchPosition(displayStaticLocation, displayError, navigatorOptionsStatic);
+
+        // в случае успеха тренировки
+        if (currentDopamine >= targetDopamine)
+        {
+            for (var i = 1; i <= 21; i++) {
+                if (localStorage.getItem('beginnerday' + i) == 'current') {
+                    localStorage.setItem('beginnerday' + i, 'complete');
+                    localStorage.setItem('beginnerday' + (i + 1), 'current');
+                    break;
+                }
+            }
+        }
+        // в случае неуспеха тренировки
+        if (currentDopamine < targetDopamine)
+        {
+            console.log('Not today (');
+        }
+       
+        startStop();
+
+        var workoutArray = {
+            time: $$('#beginnerTime').text(),
+            distance: $$('#beginnerTraveledDistance').text()
+        };
+
+        if (localStorage.getItem('amountoftrainings')) {
+            localStorage.setItem('amountoftrainings', parseInt(localStorage.getItem('amountoftrainings')) + 1);
+        }
+        else {
+            localStorage.setItem('amountoftrainings', 1);
+        }
+        if (localStorage.getItem('totaldistance')) {
+            localStorage.setItem('totaldistance', parseInt(localStorage.getItem('totaldistance')) + parseInt($$('#beginnerTraveledDistance').text()));
+        }
+        else {
+            localStorage.setItem('totaldistance', 0);
+        }
+
+
+        // сохранить localstorage на сервер
+
+        app.request.post('http://kudrytski.by/runnerhigh/saveprogress.php', {
+            login: localStorage.getItem('login'),
+            data: JSON.stringify(localStorage, null, '\t')
+         
+        }, function (data) {
+            console.log(data);
+            if (data == "success") {
+                localStorage.setItem('issaved', true);
+
+            }
+            else {
+                localStorage.setItem('issaved', false);
+            }
+
+
+        }, function () {
+            console.log('Error during saving!');
+        });
+
+
+        app.popup.close('#beginner-popup', true);
+        beginnerProgramm();
+    }
+});
+
+$$('#view-progress').on('tab:show', function (e) {
+
+    var level = 'beginner';
+   
+   
+
+    if (!isNaN(localStorage.getItem('amountoftrainings'))) {
+        $$('#trainingsvalue').text(localStorage.getItem('amountoftrainings'));
+    }
+    else {
+        $$('#trainingsvalue').text('0');
+    }
+
+    if (!isNaN(localStorage.getItem('totaldistance'))) {
+        $$('#totaldistancevalue').text(localStorage.getItem('totaldistance') + ' km');
+    }
+    else {
+        $$('#totaldistancevalue').text('0 km');
+    }
+
+    if (parseInt($$('#trainingsvalue').text()) > 10) {
+        level = 'intermediate';
+    }
+    if (parseInt($$('#trainingsvalue').text()) > 100) {
+        level = 'pro';
+    }
+    $$('#currentlevelvalue').text(level);
+
+    localStorage.setItem('totaldistance', 4);
+
+
+    var burnedcalories = 0; // https://run-studio.com/blog/skolko-kaloriy-szhigaetsya-pri-bege
+
+    var gender = 0;
+    if (localStorage.getItem('gender') == 'Male')
+    { gender = 1 };
+
+    if (!isNaN(localStorage.getItem('totaldistance'))) {
+        if (gender) {
+            burnedcalories = parseInt(localStorage.getItem('totaldistance')) * 56;        
+        }
+        else {
+            burnedcalories = parseInt(localStorage.getItem('totaldistance')) * 77;
+        }
+    }
+    else {
+        burnedcalories = 0;       
+    }
+
+    $$('#caloriesburnedvalue').text(burnedcalories.toFixed(1) + " ccal");
+
+    var burnedfats = 0;
+    burnedfats = burnedcalories / 9.29
+
+    $$('#fatburnedvalue').text(burnedfats.toFixed(1) + " g");
+});
 
 
 // Login Screen Demo
@@ -498,11 +1066,6 @@ $$('#my-login-screen .login-button').on('click', function () {
     });
 
 
-// Выбор программы
-$$('#selecthabitprogramm').on('click', function () {
-    console.log('habit formation programm selected');
-    localStorage.setItem('programm', 'habit');
-});
 
 // Registration screen
 $$('#createNewAcc').on('click', function () {

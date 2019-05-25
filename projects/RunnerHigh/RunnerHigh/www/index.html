@@ -49,16 +49,23 @@
             </div>
         </div>
         <!-- Right panel with reveal effect-->
-        <div class="panel panel-right panel-reveal theme-dark">
+        <div class="panel panel-right panel-reveal">
             <div class="view">
                 <div class="page">
                     <div class="navbar">
                         <div class="navbar-inner">
-                            <div class="title">Right Panel</div>
+                            <div class="title">Settings</div>
                         </div>
                     </div>
                     <div class="page-content">
-                        <div class="block">Right panel content goes here</div>
+                        <div class="block">
+                            <a href="#" id="changeprogramm" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title">Change the programm</div>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -68,13 +75,7 @@
             <!-- Tabbar for switching views-tabs -->
             <div class="toolbar tabbar-labels toolbar-bottom">
                 <div class="toolbar-inner">
-                    <a href="#view-home" class="tab-link tab-link-active">
-                        <i class="icon f7-icons ios-only">info_round</i>
-                        <i class="icon f7-icons ios-only icon-ios-fill">info_round</i>
-                        <i class="icon material-icons md-only">info</i>
-                        <span class="tabbar-label">Technical</span>
-                    </a>
-                    <a href="#view-news" class="tab-link tab-link">
+                    <a href="#view-news" class="tab-link tab-link-active">
                         <i class="icon f7-icons ios-only">info_round</i>
                         <i class="icon f7-icons ios-only icon-ios-fill">info_round</i>
                         <i class="icon material-icons md-only">info</i>
@@ -107,103 +108,101 @@
                 </div>
             </div>
             <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+           
+            <!-- Programms View -->
+            <div id="view-programms" class="view tab">
 
-            <div id="view-home" class="view view-main tab tab-active">
-
-                <!-- Page, data-name contains page name which can be used in page callbacks -->
-                <div class="page" data-name="home">
-                    <!-- Top Navbar -->
+                <div class="page" data-name="programmspage">
                     <div class="navbar">
-                        <div class="navbar-inner">
-                            <div class="left">
-                                <a href="#" class="link icon-only panel-open" data-panel="left">
-                                    <i class="icon f7-icons ios-only">menu</i>
-                                    <i class="icon material-icons md-only">menu</i>
-                                </a>
-                            </div>
-                            <div class="title sliding">Home</div>
+                        <div class="navbar-inner sliding">
                             <div class="right">
                                 <a href="#" class="link icon-only panel-open" data-panel="right">
                                     <i class="icon f7-icons ios-only">menu</i>
                                     <i class="icon material-icons md-only">menu</i>
                                 </a>
                             </div>
+                            <div class="title">Runner High</div>
                         </div>
                     </div>
-                    <!-- Scrollable page content-->
+                    <div id="programmview" class="page-content">
+                      
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!-- Progress View -->
+            <div id="view-progress" class="view tab">
+                <div class="page" data-name="runtracker">
+                    <div class="navbar">
+                        <div class="navbar-inner sliding">
+
+                            <div class="title">Runner High</div>
+                        </div>
+                    </div>
                     <div class="page-content">
-                        <div class="block block-strong">
-                            <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
-                            <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
-                        </div>
-                        <a href="#" id="startHomeButton" class="button button-raised button-fill">Start</a>
-                        <div class="block-title">Navigation</div>
-                        <div class="list">
-                            <ul>
-                                <li>
-                                    <a href="/about/" class="item-content item-link">
-                                        <div class="item-inner">
-                                            <div class="item-title">About</div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="block-title">Modals</div>
-                        <div class="block block-strong">
-                            <div class="row">
+                        <div class="block-title">Current level</div>
+                        <div id="level" class="block block-strong">
+                            <div id="currentlevel" class="row block">
                                 <div class="col-50">
-                                    <a href="#" class="button button-raised button-fill popup-open" data-popup="#my-popup">Popup</a>
+                                    Current level:
                                 </div>
-                                <div class="col-50">
-                                    <a href="#" class="button button-raised button-fill login-screen-open" data-login-screen="#my-login-screen">Login Screen</a>
+                                <div id="currentlevelvalue" class="col-50">
+
                                 </div>
                             </div>
+
                         </div>
-                        <div class="block-title">Panels</div>
-                        <div class="block block-strong">
-                            <div class="row">
+
+                        <div class="block-title">Total</div>
+                        <div id="total" class="block block-strong">
+
+                            <div id="totaldistance" class="row block">
                                 <div class="col-50">
-                                    <a href="#" class="button button-raised button-fill panel-open" data-panel="left">Left Panel</a>
+                                    Total distance:
                                 </div>
-                                <div class="col-50">
-                                    <a href="#" class="button button-raised button-fill panel-open" data-panel="right">Right Panel</a>
+                                <div id="totaldistancevalue" class="col-50">
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="block-title searchbar-hide-on-search">Page Loaders & Router</div>
-                        <div class="list links-list searchbar-hide-on-search">
-                            <ul>
-                                <li>
-                                    <a href="/page-loader-template7/vladimir/123/about-me/1/?start=0&end=30#top">Template7 Page</a>
-                                </li>
-                                <li>
-                                    <a href="/page-loader-component/vladimir/123/about-me/1/?start=0&end=30#top">Component Page</a>
-                                </li>
-                                <li>
-                                    <a href="/load-something-that-doesnt-exist/">Default Route (404)</a>
-                                </li>
-                                <li>
-                                    <a href="/request-and-load/user/123456/">Request Data & Load</a>
-                                </li>
-                            </ul>
+
+                            <div id="trainings" class="row block">
+                                <div class="col-50">
+                                    Total amount of trainings:
+                                </div>
+                                <div id="trainingsvalue" class="col-50">
+
+                                </div>
+                            </div>
+
+                            <div id="caloriesburned" class="row block">
+                                <div class="col-50">
+                                    Calories burned:
+                                </div>
+                                <div id="caloriesburnedvalue" class="col-50">
+
+                                </div>
+
+                            </div>
+
+                            <div id="fatburned" class="row block">
+                                <div class="col-50">
+                                    Fat burned:
+                                </div>
+                                <div id="fatburnedvalue" class="col-50">
+
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- News View -->
-            <div id="view-news" class="view tab">
-
-            </div>
-            <!-- Progress View -->
-            <div id="view-progress" class="tab">
-                <!-- Settings page will be loaded here dynamically from /progress/ route -->
-                <p>Hello!</p>
-
-            </div>
             <!-- Tracker View -->
-            <div id="view-runtracker" class="tab">
+            <div id="view-runtracker" class="view tab">
                 <div class="page" data-name="runtracker">
                     <div class="navbar">
                         <div class="navbar-inner sliding">
@@ -230,50 +229,12 @@
                     </div>
                 </div>
             </div>
-            <!-- Programms View -->
-            <div id="view-programms" class="view tab">
 
-                <div class="page" data-name="programmspage">
-                    <div class="navbar">
-                        <div class="navbar-inner sliding">
-
-                            <div class="title">Runner High</div>
-                        </div>
-                    </div>
-                    <div class="page-content">
-
-                        <div class="card card-expandable">
-                            <div class="card-content">
-                                <div style="background: url(images/cordova.png) no-repeat center bottom; background-size: cover; height: 240px"></div>
-                                <a href="#" class="link card-close card-opened-fade-in color-white" style="position: absolute; right: 15px; top: 15px">
-                                    <i class="icon f7-icons">close_round_fill</i>
-                                </a>
-                                <div class="card-header display-block" style="height: 60px">
-                                    Habit formation
-                                </div>
-                                <div class="card-content-padding">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus rhoncus cursus. Etiam lorem est, consectetur vitae tempor a, volutpat eget purus. Duis urna lectus, vehicula at quam id, sodales dapibus turpis. Suspendisse potenti. Proin condimentum luctus nulla, et rhoncus ante rutrum eu. Maecenas ut tincidunt diam. Vestibulum lacinia dui ligula, sit amet pulvinar nisl blandit luctus. Vestibulum aliquam ligula nulla, tincidunt rhoncus tellus interdum at. Phasellus mollis ipsum at mollis tristique. Maecenas sit amet tempus justo. Duis dolor elit, mollis quis viverra quis, vehicula eu ante. Integer a molestie risus. Vestibulum eu sollicitudin massa, sit amet dictum sem. Aliquam nisi tellus, maximus eget placerat in, porta vel lorem. Aenean tempus sodales nisl in cursus. Curabitur tincidunt turpis in nisl ornare euismod eget at libero.</p>
-                                    <p>Suspendisse ligula eros, congue in nulla pellentesque, imperdiet blandit sapien. Morbi nisi sem, efficitur a rutrum porttitor, feugiat vel enim. Fusce eget vehicula odio, et luctus neque. Donec mattis a nulla laoreet commodo. Integer eget hendrerit augue, vel porta libero. Morbi imperdiet, eros at ultricies rutrum, eros urna auctor enim, eget laoreet massa diam vitae lorem. Proin eget urna ultrices, semper ligula aliquam, dignissim eros. Donec vitae augue eu sapien tristique elementum a nec nulla. Aliquam erat volutpat. Curabitur condimentum, metus blandit lobortis fringilla, enim mauris venenatis neque, et venenatis lorem urna ut justo. Maecenas neque enim, congue ac tempor quis, tincidunt ut mi. Donec venenatis ante non consequat molestie. Quisque ut rhoncus ligula. Vestibulum sodales maximus justo sit amet ornare. Nullam pulvinar eleifend nisi sit amet molestie.</p>
-                                    <p>
-                                        <div class="row">
-                                            <div class="col-50">
-                                                <a href="#" class="button button-fill button-round button-large card-close">Close</a>
-                                            </div>
-                                            <div class="col-50">
-                                                <a href="#" id="selecthabitprogramm" class="button button-fill button-round button-large card-close">Select</a>
-                                            </div>
-                                        </div>
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+            <!-- News View -->
+            <div id="view-news" class="view view-main tab tab-active">
 
             </div>
+
             <!-- Profile View -->
             <div id="view-profile" class="view tab">
                 <div class="page" data-name="profile">
@@ -344,260 +305,315 @@
                 </div>
             </div>
         </div>
-        <!-- Popup -->
-        <div class="popup" id="my-popup">
-            <div class="view">
-                <div class="page">
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                            <div class="title">Popup</div>
+                <!-- Popup -->
+                <div class="popup" id="my-popup">
+                    <div class="view">
+                        <div class="page">
+                            <div class="navbar">
+                                <div class="navbar-inner">
+                                    <div class="title">Run!</div>
 
-                        </div>
-                    </div>
-                    <div class="page-content">
-                        <div class="block-title">Parameters</div>
-                        <div class="block block-strong">
-                            <div class="row">
-                                <div class="col-25">
-
-                                    <h4 id="speed">-</h4>
-                                    <p>Speed</p>
-                                </div>
-                                <div class="col-25">
-
-                                    <h4 id="traveledDistance">-</h4>
-                                    <p>Distance</p>
-                                </div>
-                                <div class="col-25">
-
-                                    <h4 id="accuracy">-</h4>
-                                    <p>Accuracy</p>
-                                </div>
-                                <div class="col-25">
-
-                                    <h4 id="adrenalin">-</h4>
-                                    <p>Adrenalin</p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-25">
+                            <div class="page-content">
+                                <div class="block-title">Parameters</div>
+                                <div class="block block-strong">
+                                    <div class="row">
+                                        <div class="col-25">
 
-                                    <h4 id="steps">-</h4>
-                                    <p>Steps</p>
+                                            <h4 id="speed">-</h4>
+                                            <p>Speed</p>
+                                        </div>
+                                        <div class="col-25">
+
+                                            <h4 id="traveledDistance">-</h4>
+                                            <p>Distance</p>
+                                        </div>
+                                        <div class="col-25">
+
+                                            <h4 id="accuracy">-</h4>
+                                            <p>Accuracy</p>
+                                        </div>
+                                        <div class="col-25">
+
+                                            <h4 id="time">-</h4>
+                                            <p>Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-33">
+
+                                            <h4 id="adrenalin">-</h4>
+                                            <p>Adrenalin</p>
+                                        </div>
+                                        <div class="col-33">
+
+                                            <h4 id="noradrenalin">-</h4>
+                                            <p>Noradrenalin</p>
+                                        </div>
+                                        <div class="col-33">
+
+                                            <h4 id="dopamine">-</h4>
+                                            <p>Dopamine</p>
+                                        </div>
+                                       
+                                    </div>
                                 </div>
-                                <div class="col-25">
+                                <div id="fabstop" class="fab fab-extended fab-center-bottom">
+                                    <a href="#">
 
-                                    <h4>-</h4>
-                                    <p>Distance</p>
-                                </div>
-                                <div class="col-25">
-
-                                    <h4>-</h4>
-                                    <p>Accuracy</p>
-                                </div>
-                                <div class="col-25">
-
-                                    <h4>-</h4>
-                                    <p>Adrenalin</p>
+                                        <div class="fab-text">Stop</div>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                        <div id="fabstop" class="fab fab-extended fab-center-bottom">
-                            <a href="#">
-
-                                <div class="fab-text">Stop</div>
-                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Login Screen -->
-        <div class="login-screen" id="my-login-screen">
-            <div class="view">
-                <div class="page">
-                    <div class="page-content login-screen-content">
-                        <div class="login-screen-title">Login</div>
-                        <div class="list">
-                            <ul>
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Username</div>
-                                        <div class="item-input-wrap">
-                                            <input type="text" name="username" placeholder="Your username">
+                <!-- Beginner program popup -->
+                <div class="popup" id="beginner-popup">
+                    <div class="view">
+                        <div class="page">
+                            <div class="navbar">
+                                <div class="navbar-inner">
+                                   
+                                    <div class="title">Run!</div>
+
+                                </div>
+                            </div>
+                            <div class="page-content">
+                                <div class="block-title">Parameters</div>
+                                <div class="block block-strong">
+
+                                    <div class="row">
+                                        <div class="col-33">
+
+                                            <h4 id="beginnerSpeed">-</h4>
+                                            <p>Speed</p>
+                                        </div>
+                                        <div class="col-33">
+
+                                            <h4 id="beginnerTraveledDistance">-</h4>
+
+                                            <p>Distance</p>
+                                        </div>
+                                        <div class="col-33">
+
+                                            <h4 id="beginnerTime">00:00:00</h4>
+                                            <p>Time</p>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Password</div>
-                                        <div class="item-input-wrap">
-                                            <input type="password" name="password" placeholder="Your password">
+                                    <div class="row">
+
+                                        <div class="col-50">
+
+                                            <h4 id="beginnerDopamine">-</h4>
+                                            <p>Current Dopamine</p>
+                                        </div>
+
+                                        <div class="col-50">
+
+                                            <h4 id="targetDopamine">-</h4>
+                                            <p>Target Dopamine</p>
                                         </div>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="list">
-                            <ul>
-                                <li>
-                                    <a href="#" class="item-link list-button login-button">Sign In</a>
-                                </li>
-                            </ul>
-                            <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen<br> <a href="#" id="createNewAcc" class="item-link list-button">Create new account</a></div>
+
+                                </div>
+                                <div id="beginnerfab" class="fab fab-extended fab-center-bottom">
+                                    <a href="#">
+
+                                        <div class="fab-text">Stop</div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Registration Screen -->
-        <div class="login-screen" id="my-registration-screen">
-            <div class="view">
-                <div class="page">
-                    <div class="page-content login-screen-content">
-                        <div class="login-screen-title">Login</div>
-                        <div class="list">
-                            <ul>
-                                <!-- First name -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">First name</div>
-                                        <div class="item-input-wrap">
-                                            <input type="text" name="firstname" placeholder="Your first name">
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Second name -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Second name</div>
-                                        <div class="item-input-wrap">
-                                            <input type="text" name="secondname" placeholder="Your second name">
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Gender -->
-                                <li class="item-content item-input">
-
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Gender</div>
-                                        <div class="item-input-wrap input-dropdown-wrap">
-                                            <select id="genderselector" placeholder="Please choose...">
-                                                <option value="Male">Female</option>
-                                                <option value="Female">Male</option>
-                                                <option value="Other">Other</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Birthday -->
-                                <li class="item-content item-input">
-
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Birthday</div>
-                                        <div class="item-input-wrap">
-                                            <input type="date" name="birthday" value="2000-04-30" placeholder="Please choose..." required validate>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Body mass -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Body mass</div>
-                                        <div class="item-input-wrap">
-                                            <div class="row">
-                                                <div class="col-50">
-                                                    <input type="number" name="bodymass" placeholder="Your body mass" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
+                <!-- Login Screen -->
+                <div class="login-screen" id="my-login-screen">
+                    <div class="view">
+                        <div class="page">
+                            <div class="page-content login-screen-content">
+                                <div class="login-screen-title">Login</div>
+                                <div class="list">
+                                    <ul>
+                                        <li class="item-content item-input">
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Username</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="text" name="username" placeholder="Your username">
                                                 </div>
-                                                <div class="col-50">
-                                                    <select id="massselector" placeholder="Please choose...">
-                                                        <option value="kg">kg</option>
-                                                        <option value="lbs">lbs</option>
+                                            </div>
+                                        </li>
+                                        <li class="item-content item-input">
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Password</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="password" name="password" placeholder="Your password">
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="list">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="item-link list-button login-button">Sign In</a>
+                                        </li>
+                                    </ul>
+                                    <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen<br> <a href="#" id="createNewAcc" class="item-link list-button">Create new account</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Screen -->
+                <div class="login-screen" id="my-registration-screen">
+                    <div class="view">
+                        <div class="page">
+                            <div class="page-content login-screen-content">
+                                <div class="login-screen-title">Login</div>
+                                <div class="list">
+                                    <ul>
+                                        <!-- First name -->
+                                        <li class="item-content item-input">
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">First name</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="text" name="firstname" placeholder="Your first name">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Second name -->
+                                        <li class="item-content item-input">
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Second name</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="text" name="secondname" placeholder="Your second name">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Gender -->
+                                        <li class="item-content item-input">
+
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Gender</div>
+                                                <div class="item-input-wrap input-dropdown-wrap">
+                                                    <select id="genderselector" placeholder="Please choose...">
+                                                        <option value="Male">Female</option>
+                                                        <option value="Female">Male</option>
+                                                        <option value="Other">Other</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Height -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Height</div>
-                                        <div class="item-input-wrap">
-                                            <div class="row">
-                                                <div class="col-50">
-                                                    <input type="number" name="height" placeholder="Height" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
-                                                </div>
-                                                <div class="col-50">
-                                                    <select id="heightselector" placeholder="Please choose...">
-                                                        <option value="cm">cm</option>
-                                                        <option value="inch">inch</option>
-                                                    </select>
+                                        </li>
+                                        <!-- Birthday -->
+                                        <li class="item-content item-input">
+
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Birthday</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="date" name="birthday" value="2000-04-30" placeholder="Please choose..." required validate>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Email -->
-                                <li class="item-content item-input">
+                                        </li>
+                                        <!-- Body mass -->
+                                        <li class="item-content item-input">
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Body mass</div>
+                                                <div class="item-input-wrap">
+                                                    <div class="row">
+                                                        <div class="col-50">
+                                                            <input type="number" name="bodymass" placeholder="Your body mass" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
+                                                        </div>
+                                                        <div class="col-50">
+                                                            <select id="massselector" placeholder="Please choose...">
+                                                                <option value="kg">kg</option>
+                                                                <option value="lbs">lbs</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Height -->
+                                        <li class="item-content item-input">
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Height</div>
+                                                <div class="item-input-wrap">
+                                                    <div class="row">
+                                                        <div class="col-50">
+                                                            <input type="number" name="height" placeholder="Height" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
+                                                        </div>
+                                                        <div class="col-50">
+                                                            <select id="heightselector" placeholder="Please choose...">
+                                                                <option value="cm">cm</option>
+                                                                <option value="inch">inch</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Email -->
+                                        <li class="item-content item-input">
 
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">E-mail</div>
-                                        <div class="item-input-wrap">
-                                            <input type="email" name="email" placeholder="Your e-mail" required validate>
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">E-mail</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="email" name="email" placeholder="Your e-mail" required validate>
 
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Login -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Login</div>
-                                        <div class="item-input-wrap">
-                                            <input type="text" name="login" placeholder="Login" required validate>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Password -->
-                                <li class="item-content item-input">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Login -->
+                                        <li class="item-content item-input">
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Login</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="text" name="login" placeholder="Login" required validate>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Password -->
+                                        <li class="item-content item-input">
 
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Password</div>
-                                        <div class="item-input-wrap">
-                                            <input type="password" name="password" placeholder="Your password" required validate>
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Password</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="password" name="password" placeholder="Your password" required validate>
 
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Second time password -->
-                                <li class="item-content item-input">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Second time password -->
+                                        <li class="item-content item-input">
 
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Password</div>
-                                        <div class="item-input-wrap">
-                                            <input type="password" name="password2" placeholder="Your password once more time" required validate>
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Password</div>
+                                                <div class="item-input-wrap">
+                                                    <input type="password" name="password2" placeholder="Your password once more time" required validate>
 
-                                        </div>
-                                    </div>
-                                </li>
+                                                </div>
+                                            </div>
+                                        </li>
 
-                            </ul>
-                        </div>
-                        <div class="list">
-                            <ul>
-                                <li>
-                                    <a href="#" id="register-button" class="item-link list-button">Register</a>
-                                </li>
-                            </ul>
-                            <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen<br></div>
+                                    </ul>
+                                </div>
+                                <div class="list">
+                                    <ul>
+                                        <li>
+                                            <a href="#" id="register-button" class="item-link list-button">Register</a>
+                                        </li>
+                                    </ul>
+                                    <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen<br></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-    </div>
+            </div>
 
 
 

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.runnerhigh" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="ru-RU">
+<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="com.cordova.runnerhigh" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="ru-RU">
   <name>RunnerHigh</name>
   <description>Пустой проект, который использует Apache Cordova, поможет разработать приложение, нацеленное на несколько мобильных платформ: Android, iOS и универсальную платформу Windows.</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Введите здесь свое имя.</author>
   <vs:template-name>BlankJS</vs:template-name>
   <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
-  <engine name="android" spec="5.2.1" />
-  <engine name="ios" spec="4.2.0" />
+  <engine name="android" spec="~5.2.1" />
+  <engine name="ios" spec="~4.2.0" />
   <engine name="windows" spec="4.4.2" />
   <content src="index.html" />
   <access origin="*" />
@@ -96,5 +96,5 @@
     <splash src="res/screens/windows/SplashScreen.scale-240.png" width="1152" height="1920" />
     <splash src="res/screens/windows/SplashScreenPhone.scale-240.png" width="1152" height="1920" />
   </platform>
-  <plugin name="cordova-support-google-services" spec="~1.3.1" src="https://github.com/chemerisuk/cordova-support-google-services" />
+  <preference name="android-minSdkVersion" value="23" />
 </widget>
