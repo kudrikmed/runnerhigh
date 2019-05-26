@@ -78,5 +78,40 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "android.support.v4": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/floatinghotpot/cordova-plugin-android-support-v4",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.phonegap.plugins.Flurry": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jfpsf/flurry-phonegap-plugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-flurryanalytics": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blakgeek/cordova-plugin-flurryanalytics",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-cocoapod-support": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-cocoapod-support"
+        },
+        "is_top_level": false,
+        "variables": {}
     }
 }

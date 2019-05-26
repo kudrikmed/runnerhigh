@@ -76,6 +76,7 @@ var programmsView = app.views.create('#view-programms', {
 });
 
 
+
 // загрузка экрана логина при первом старте
 
 if (localStorage.getItem('firstStart') != 'no') {
@@ -87,7 +88,16 @@ else
 {
  
     console.log('Not first start of the app');
+ 
+
+    mixpanel.track("App started");  // https://mixpanel.com  kudrikmed@gmail.com 241089dima
+   
+
+
     app.tab.show('#view-runtracker', false);
+
+
+
     if (navigator.geolocation) {
         console.log("runtracker tab is opened");
         watchIDStatic = navigator.geolocation.watchPosition(displayStaticLocation, displayError, navigatorOptionsStatic);
@@ -97,6 +107,10 @@ else
         }
     };
 }
+
+// аналитика
+
+
 
 var coordsArray = [];  // массив для сохранения данных о координатах
 var tripDistance = 0;      // пройденное расстояние
@@ -583,7 +597,7 @@ function beginnerProgramm() {
     var beginnerVirtualList = app.virtualList.create({
         el: '#beginnervirtuallist',
         items: Days,
-        height: 68,
+        height: 70,
         itemTemplate:
         '<li>' +
         '<a href="#" id="{{title}}" data-popup="#beginner-popup" class="{{class}}">' +
@@ -882,7 +896,7 @@ $$('#beginnerfab').on('click', function () {
         watchIDStatic = navigator.geolocation.watchPosition(displayStaticLocation, displayError, navigatorOptionsStatic);
 
         // в случае успеха тренировки
-        if (currentDopamine >= targetDopamine)
+        if (currentDopamine >= targetDopamine && currentDopamine != "-")
         {
             for (var i = 1; i <= 21; i++) {
                 if (localStorage.getItem('beginnerday' + i) == 'current') {
@@ -952,7 +966,7 @@ $$('#view-progress').on('tab:show', function (e) {
    
    
 
-    if (!isNaN(localStorage.getItem('amountoftrainings'))) {
+    if (!isNaN(localStorage.getItem('amountoftrainings')) && localStorage.getItem('amountoftrainings') != null) {
         $$('#trainingsvalue').text(localStorage.getItem('amountoftrainings'));
     }
     else {
@@ -973,8 +987,6 @@ $$('#view-progress').on('tab:show', function (e) {
         level = 'pro';
     }
     $$('#currentlevelvalue').text(level);
-
-    localStorage.setItem('totaldistance', 4);
 
 
     var burnedcalories = 0; // https://run-studio.com/blog/skolko-kaloriy-szhigaetsya-pri-bege
@@ -998,7 +1010,7 @@ $$('#view-progress').on('tab:show', function (e) {
     $$('#caloriesburnedvalue').text(burnedcalories.toFixed(1) + " ccal");
 
     var burnedfats = 0;
-    burnedfats = burnedcalories / 9.29
+    burnedfats = burnedcalories / 19.29
 
     $$('#fatburnedvalue').text(burnedfats.toFixed(1) + " g");
 });

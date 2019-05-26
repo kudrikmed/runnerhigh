@@ -25,11 +25,20 @@
         },
         "cordova-support-google-services": {
             "PACKAGE_NAME": "io.cordova.runnerhigh"
+        },
+        "android.support.v4": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-flurryanalytics": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "io.cordova.myapp41018d"
+        },
+        "cordova-plugin-cocoapod-support": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
         }
     }
 }

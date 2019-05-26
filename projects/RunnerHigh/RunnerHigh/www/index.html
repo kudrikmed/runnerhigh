@@ -25,6 +25,24 @@
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/app.css">
 
+    <!-- start Mixpanel -->
+    <script type="text/javascript">
+    (function (c, a) {
+            if (!a.__SV) {
+                var b = window; try { var d, m, j, k = b.location, f = k.hash; d = function (a, b) { return (m = a.match(RegExp(b + "=([^&]*)"))) ? m[1] : null }; f && d(f, "state") && (j = JSON.parse(decodeURIComponent(d(f, "state"))), "mpeditor" === j.action && (b.sessionStorage.setItem("_mpcehash", f), history.replaceState(j.desiredHash || "", c.title, k.pathname + k.search))) } catch (n) { } var l, h; window.mixpanel = a; a._i = []; a.init = function (b, d, g) {
+                    function c(b, i) {
+                        var a = i.split("."); 2 == a.length && (b = b[a[0]], i = a[1]); b[i] = function () {
+                            b.push([i].concat(Array.prototype.slice.call(arguments,
+                                0)))
+                        }
+                    } var e = a; "undefined" !== typeof g ? e = a[g] = [] : g = "mixpanel"; e.people = e.people || []; e.toString = function (b) { var a = "mixpanel"; "mixpanel" !== g && (a += "." + g); b || (a += " (stub)"); return a }; e.people.toString = function () { return e.toString(1) + ".people (stub)" }; l = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+                    for (h = 0; h < l.length; h++)c(e, l[h]); var f = "set set_once union unset remove delete".split(" "); e.get_group = function () { function a(c) { b[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); e.push([d, call2]) } } for (var b = {}, d = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < f.length; c++)a(f[c]); return b }; a._i.push([b, d, g])
+                }; a.__SV = 1.2; b = c.createElement("script"); b.type = "text/javascript"; b.async = !0; b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+                    MIXPANEL_CUSTOM_LIB_URL : "file:" === c.location.protocol && "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"; d = c.getElementsByTagName("script")[0]; d.parentNode.insertBefore(b, d)
+            }
+        })(document, window.mixpanel || []);
+        mixpanel.init("5defe28acbb3ef3a1a770fd60bd51477");</script>
+    <!-- end Mixpanel -->
 
 </head>
 <body>
@@ -108,7 +126,6 @@
                 </div>
             </div>
             <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
-           
             <!-- Programms View -->
             <div id="view-programms" class="view tab">
 
@@ -125,7 +142,7 @@
                         </div>
                     </div>
                     <div id="programmview" class="page-content">
-                      
+
 
                     </div>
                 </div>
@@ -305,322 +322,322 @@
                 </div>
             </div>
         </div>
-                <!-- Popup -->
-                <div class="popup" id="my-popup">
-                    <div class="view">
-                        <div class="page">
-                            <div class="navbar">
-                                <div class="navbar-inner">
-                                    <div class="title">Run!</div>
+        <!-- Popup -->
+        <div class="popup" id="my-popup">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="title">Run!</div>
 
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block-title">Parameters</div>
+                        <div class="block block-strong">
+                            <div class="row">
+                                <div class="col-25">
+
+                                    <h4 id="speed">-</h4>
+                                    <p>Speed</p>
+                                </div>
+                                <div class="col-25">
+
+                                    <h4 id="traveledDistance">-</h4>
+                                    <p>Distance</p>
+                                </div>
+                                <div class="col-25">
+
+                                    <h4 id="accuracy">-</h4>
+                                    <p>Accuracy</p>
+                                </div>
+                                <div class="col-25">
+
+                                    <h4 id="time">-</h4>
+                                    <p>Time</p>
                                 </div>
                             </div>
-                            <div class="page-content">
-                                <div class="block-title">Parameters</div>
-                                <div class="block block-strong">
-                                    <div class="row">
-                                        <div class="col-25">
+                            <div class="row">
+                                <div class="col-33">
 
-                                            <h4 id="speed">-</h4>
-                                            <p>Speed</p>
-                                        </div>
-                                        <div class="col-25">
-
-                                            <h4 id="traveledDistance">-</h4>
-                                            <p>Distance</p>
-                                        </div>
-                                        <div class="col-25">
-
-                                            <h4 id="accuracy">-</h4>
-                                            <p>Accuracy</p>
-                                        </div>
-                                        <div class="col-25">
-
-                                            <h4 id="time">-</h4>
-                                            <p>Time</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-33">
-
-                                            <h4 id="adrenalin">-</h4>
-                                            <p>Adrenalin</p>
-                                        </div>
-                                        <div class="col-33">
-
-                                            <h4 id="noradrenalin">-</h4>
-                                            <p>Noradrenalin</p>
-                                        </div>
-                                        <div class="col-33">
-
-                                            <h4 id="dopamine">-</h4>
-                                            <p>Dopamine</p>
-                                        </div>
-                                       
-                                    </div>
+                                    <h4 id="adrenalin">-</h4>
+                                    <p>Adrenalin</p>
                                 </div>
-                                <div id="fabstop" class="fab fab-extended fab-center-bottom">
-                                    <a href="#">
+                                <div class="col-33">
 
-                                        <div class="fab-text">Stop</div>
-                                    </a>
+                                    <h4 id="noradrenalin">-</h4>
+                                    <p>Noradrenalin</p>
                                 </div>
+                                <div class="col-33">
+
+                                    <h4 id="dopamine">-</h4>
+                                    <p>Dopamine</p>
+                                </div>
+
                             </div>
+                        </div>
+                        <div id="fabstop" class="fab fab-extended fab-center-bottom">
+                            <a href="#">
+
+                                <div class="fab-text">Stop</div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <!-- Beginner program popup -->
-                <div class="popup" id="beginner-popup">
-                    <div class="view">
-                        <div class="page">
-                            <div class="navbar">
-                                <div class="navbar-inner">
-                                   
-                                    <div class="title">Run!</div>
+            </div>
+        </div>
+        <!-- Beginner program popup -->
+        <div class="popup" id="beginner-popup">
+            <div class="view">
+                <div class="page">
+                    <div class="navbar">
+                        <div class="navbar-inner">
 
+                            <div class="title">Run!</div>
+
+                        </div>
+                    </div>
+                    <div class="page-content">
+                        <div class="block-title">Parameters</div>
+                        <div class="block block-strong">
+
+                            <div class="row">
+                                <div class="col-33">
+
+                                    <h4 id="beginnerSpeed">-</h4>
+                                    <p>Speed</p>
+                                </div>
+                                <div class="col-33">
+
+                                    <h4 id="beginnerTraveledDistance">-</h4>
+
+                                    <p>Distance</p>
+                                </div>
+                                <div class="col-33">
+
+                                    <h4 id="beginnerTime">00:00:00</h4>
+                                    <p>Time</p>
                                 </div>
                             </div>
-                            <div class="page-content">
-                                <div class="block-title">Parameters</div>
-                                <div class="block block-strong">
+                            <div class="row">
 
-                                    <div class="row">
-                                        <div class="col-33">
+                                <div class="col-50">
 
-                                            <h4 id="beginnerSpeed">-</h4>
-                                            <p>Speed</p>
-                                        </div>
-                                        <div class="col-33">
-
-                                            <h4 id="beginnerTraveledDistance">-</h4>
-
-                                            <p>Distance</p>
-                                        </div>
-                                        <div class="col-33">
-
-                                            <h4 id="beginnerTime">00:00:00</h4>
-                                            <p>Time</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-
-                                        <div class="col-50">
-
-                                            <h4 id="beginnerDopamine">-</h4>
-                                            <p>Current Dopamine</p>
-                                        </div>
-
-                                        <div class="col-50">
-
-                                            <h4 id="targetDopamine">-</h4>
-                                            <p>Target Dopamine</p>
-                                        </div>
-                                    </div>
-
+                                    <h4 id="beginnerDopamine">-</h4>
+                                    <p>Current Dopamine</p>
                                 </div>
-                                <div id="beginnerfab" class="fab fab-extended fab-center-bottom">
-                                    <a href="#">
 
-                                        <div class="fab-text">Stop</div>
-                                    </a>
+                                <div class="col-50">
+
+                                    <h4 id="targetDopamine">-</h4>
+                                    <p>Target Dopamine</p>
                                 </div>
                             </div>
+
+                        </div>
+                        <div id="beginnerfab" class="fab fab-extended fab-center-bottom">
+                            <a href="#">
+
+                                <div class="fab-text">Stop</div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <!-- Login Screen -->
-                <div class="login-screen" id="my-login-screen">
-                    <div class="view">
-                        <div class="page">
-                            <div class="page-content login-screen-content">
-                                <div class="login-screen-title">Login</div>
-                                <div class="list">
-                                    <ul>
-                                        <li class="item-content item-input">
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Username</div>
-                                                <div class="item-input-wrap">
-                                                    <input type="text" name="username" placeholder="Your username">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="item-content item-input">
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Password</div>
-                                                <div class="item-input-wrap">
-                                                    <input type="password" name="password" placeholder="Your password">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="list">
-                                    <ul>
-                                        <li>
-                                            <a href="#" class="item-link list-button login-button">Sign In</a>
-                                        </li>
-                                    </ul>
-                                    <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen<br> <a href="#" id="createNewAcc" class="item-link list-button">Create new account</a></div>
-                                </div>
-                            </div>
+            </div>
+        </div>
+        <!-- Login Screen -->
+        <div class="login-screen" id="my-login-screen">
+            <div class="view">
+                <div class="page">
+                    <div class="page-content login-screen-content">
+                        <div class="login-screen-title">Login</div>
+                        <div class="list">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Username</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="username" placeholder="Your username">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Password</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" name="password" placeholder="Your password">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <a href="#" class="item-link list-button login-button">Sign In</a>
+                                </li>
+                            </ul>
+                            <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen<br> <a href="#" id="createNewAcc" class="item-link list-button">Create new account</a></div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Registration Screen -->
-                <div class="login-screen" id="my-registration-screen">
-                    <div class="view">
-                        <div class="page">
-                            <div class="page-content login-screen-content">
-                                <div class="login-screen-title">Login</div>
-                                <div class="list">
-                                    <ul>
-                                        <!-- First name -->
-                                        <li class="item-content item-input">
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">First name</div>
-                                                <div class="item-input-wrap">
-                                                    <input type="text" name="firstname" placeholder="Your first name">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- Second name -->
-                                        <li class="item-content item-input">
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Second name</div>
-                                                <div class="item-input-wrap">
-                                                    <input type="text" name="secondname" placeholder="Your second name">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- Gender -->
-                                        <li class="item-content item-input">
+        <!-- Registration Screen -->
+        <div class="login-screen" id="my-registration-screen">
+            <div class="view">
+                <div class="page">
+                    <div class="page-content login-screen-content">
+                        <div class="login-screen-title">Login</div>
+                        <div class="list">
+                            <ul>
+                                <!-- First name -->
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">First name</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="firstname" placeholder="Your first name">
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Second name -->
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Second name</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="secondname" placeholder="Your second name">
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Gender -->
+                                <li class="item-content item-input">
 
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Gender</div>
-                                                <div class="item-input-wrap input-dropdown-wrap">
-                                                    <select id="genderselector" placeholder="Please choose...">
-                                                        <option value="Male">Female</option>
-                                                        <option value="Female">Male</option>
-                                                        <option value="Other">Other</option>
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Gender</div>
+                                        <div class="item-input-wrap input-dropdown-wrap">
+                                            <select id="genderselector" placeholder="Please choose...">
+                                                <option value="Male">Female</option>
+                                                <option value="Female">Male</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Birthday -->
+                                <li class="item-content item-input">
+
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Birthday</div>
+                                        <div class="item-input-wrap">
+                                            <input type="date" name="birthday" value="2000-04-30" placeholder="Please choose..." required validate>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Body mass -->
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Body mass</div>
+                                        <div class="item-input-wrap">
+                                            <div class="row">
+                                                <div class="col-50">
+                                                    <input type="number" name="bodymass" placeholder="Your body mass" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
+                                                </div>
+                                                <div class="col-50">
+                                                    <select id="massselector" placeholder="Please choose...">
+                                                        <option value="kg">kg</option>
+                                                        <option value="lbs">lbs</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <!-- Birthday -->
-                                        <li class="item-content item-input">
-
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Birthday</div>
-                                                <div class="item-input-wrap">
-                                                    <input type="date" name="birthday" value="2000-04-30" placeholder="Please choose..." required validate>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Height -->
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Height</div>
+                                        <div class="item-input-wrap">
+                                            <div class="row">
+                                                <div class="col-50">
+                                                    <input type="number" name="height" placeholder="Height" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
+                                                </div>
+                                                <div class="col-50">
+                                                    <select id="heightselector" placeholder="Please choose...">
+                                                        <option value="cm">cm</option>
+                                                        <option value="inch">inch</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <!-- Body mass -->
-                                        <li class="item-content item-input">
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Body mass</div>
-                                                <div class="item-input-wrap">
-                                                    <div class="row">
-                                                        <div class="col-50">
-                                                            <input type="number" name="bodymass" placeholder="Your body mass" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
-                                                        </div>
-                                                        <div class="col-50">
-                                                            <select id="massselector" placeholder="Please choose...">
-                                                                <option value="kg">kg</option>
-                                                                <option value="lbs">lbs</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- Height -->
-                                        <li class="item-content item-input">
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Height</div>
-                                                <div class="item-input-wrap">
-                                                    <div class="row">
-                                                        <div class="col-50">
-                                                            <input type="number" name="height" placeholder="Height" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
-                                                        </div>
-                                                        <div class="col-50">
-                                                            <select id="heightselector" placeholder="Please choose...">
-                                                                <option value="cm">cm</option>
-                                                                <option value="inch">inch</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- Email -->
-                                        <li class="item-content item-input">
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Email -->
+                                <li class="item-content item-input">
 
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">E-mail</div>
-                                                <div class="item-input-wrap">
-                                                    <input type="email" name="email" placeholder="Your e-mail" required validate>
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">E-mail</div>
+                                        <div class="item-input-wrap">
+                                            <input type="email" name="email" placeholder="Your e-mail" required validate>
 
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- Login -->
-                                        <li class="item-content item-input">
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Login</div>
-                                                <div class="item-input-wrap">
-                                                    <input type="text" name="login" placeholder="Login" required validate>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- Password -->
-                                        <li class="item-content item-input">
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Login -->
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Login</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="login" placeholder="Login" required validate>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Password -->
+                                <li class="item-content item-input">
 
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Password</div>
-                                                <div class="item-input-wrap">
-                                                    <input type="password" name="password" placeholder="Your password" required validate>
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Password</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" name="password" placeholder="Your password" required validate>
 
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- Second time password -->
-                                        <li class="item-content item-input">
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- Second time password -->
+                                <li class="item-content item-input">
 
-                                            <div class="item-inner">
-                                                <div class="item-title item-label">Password</div>
-                                                <div class="item-input-wrap">
-                                                    <input type="password" name="password2" placeholder="Your password once more time" required validate>
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">Password</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" name="password2" placeholder="Your password once more time" required validate>
 
-                                                </div>
-                                            </div>
-                                        </li>
+                                        </div>
+                                    </div>
+                                </li>
 
-                                    </ul>
-                                </div>
-                                <div class="list">
-                                    <ul>
-                                        <li>
-                                            <a href="#" id="register-button" class="item-link list-button">Register</a>
-                                        </li>
-                                    </ul>
-                                    <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen<br></div>
-                                </div>
-                            </div>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <a href="#" id="register-button" class="item-link list-button">Register</a>
+                                </li>
+                            </ul>
+                            <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen<br></div>
                         </div>
                     </div>
                 </div>
-
             </div>
+        </div>
+
+    </div>
 
 
 
     <!-- Cordova -->
-    <!--
+
     <script src="cordova.js"></script>
-    -->
+
     <script src="scripts/leaflet.js"></script>
 
     <!-- Framework7 library -->
@@ -628,6 +645,7 @@
     <!-- App routes -->
     <script src="js/routes.js"></script>
     <script src="scripts/podo.js"></script>
+  
     <script src="js/neuronetwork2.js"></script>
     <!-- Your custom app scripts -->
     <script src="js/app.js"></script>
