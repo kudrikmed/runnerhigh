@@ -72,14 +72,26 @@
                 <div class="page">
                     <div class="navbar">
                         <div class="navbar-inner">
-                            <div class="title">Settings</div>
+                            <div class="title" id="textSettings">Settings</div>
                         </div>
                     </div>
                     <div class="page-content">
                         <div class="block">
                             <a href="#" id="changeprogramm" class="item-content item-link">
                                 <div class="item-inner">
-                                    <div class="item-title">Change the programm</div>
+                                    <div class="item-title" id="textChangeTheProgramm">Change the programm</div>
+                                </div>
+                            </a>
+                            <br>
+                            <a href="#" id="changelanguage" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textChangeLanguage">Language and metrics</div>
+                                </div>
+                            </a>
+                            <br>
+                            <a href="#" id="logoutmenu" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title" id="textLogOut">Logout</div>
                                 </div>
                             </a>
                         </div>
@@ -99,31 +111,31 @@
                         <i class="icon f7-icons ios-only">info_round</i>
                         <i class="icon f7-icons ios-only icon-ios-fill">info_round</i>
                         <i class="icon material-icons md-only">info</i>
-                        <span class="tabbar-label">Info</span>
+                        <span class="tabbar-label" id="textTabInfo">Info</span>
                     </a>
                     <a href="#view-progress" class="tab-link">
                         <i class="icon f7-icons ios-only">graph_round</i>
                         <i class="icon f7-icons ios-only icon-ios-fill">graph_round</i>
                         <i class="icon material-icons md-only">trending_up</i>
-                        <span class="tabbar-label">Progress</span>
+                        <span class="tabbar-label" id="textTabProgress">Progress</span>
                     </a>
                     <a href="#view-runtracker" class="tab-link">
                         <i class="icon f7-icons ios-only">flag</i>
                         <i class="icon f7-icons ios-only icon-ios-fill">flag</i>
                         <i class="icon material-icons md-only">flag</i>
-                        <span class="tabbar-label">Tracker</span>
+                        <span class="tabbar-label" id="textTabTracker">Tracker</span>
                     </a>
                     <a href="#view-programms" class="tab-link">
                         <i class="icon f7-icons ios-only">calendar</i>
                         <i class="icon f7-icons ios-only icon-ios-fill">calendar</i>
                         <i class="icon material-icons md-only">date_range</i>
-                        <span class="tabbar-label">Programms</span>
+                        <span class="tabbar-label" id="textTabProgramms">Programms</span>
                     </a>
                     <a href="#view-profile" class="tab-link">
                         <i class="icon f7-icons ios-only">personr</i>
                         <i class="icon f7-icons ios-only icon-ios-fill">person</i>
                         <i class="icon material-icons md-only">person</i>
-                        <span class="tabbar-label">Profile</span>
+                        <span class="tabbar-label" id="textTabProfile">Profile</span>
                     </a>
                 </div>
             </div>
@@ -163,10 +175,10 @@
                         </div>
                     </div>
                     <div class="page-content">
-                        <div class="block-title">Current level</div>
+                        <div class="block-title" id="textCurrentLevel">Current level</div>
                         <div id="level" class="block block-strong">
                             <div id="currentlevel" class="row block">
-                                <div class="col-50">
+                                <div class="col-50" id="textCurrentLevelDots">
                                     Current level:
                                 </div>
                                 <div id="currentlevelvalue" class="col-50">
@@ -176,11 +188,11 @@
 
                         </div>
 
-                        <div class="block-title">Total</div>
+                        <div class="block-title" id="textTotal">Total</div>
                         <div id="total" class="block block-strong">
 
                             <div id="totaldistance" class="row block">
-                                <div class="col-50">
+                                <div class="col-50" id="textTotalDistance">
                                     Total distance:
                                 </div>
                                 <div id="totaldistancevalue" class="col-50">
@@ -189,7 +201,7 @@
                             </div>
 
                             <div id="trainings" class="row block">
-                                <div class="col-50">
+                                <div class="col-50" id="textTotalAmountOfTrainings">
                                     Total amount of trainings:
                                 </div>
                                 <div id="trainingsvalue" class="col-50">
@@ -198,7 +210,7 @@
                             </div>
 
                             <div id="caloriesburned" class="row block">
-                                <div class="col-50">
+                                <div class="col-50" id="textCaloriesBurned">
                                     Calories burned:
                                 </div>
                                 <div id="caloriesburnedvalue" class="col-50">
@@ -208,7 +220,7 @@
                             </div>
 
                             <div id="fatburned" class="row block">
-                                <div class="col-50">
+                                <div class="col-50" id="textFatBurned">
                                     Fat burned:
                                 </div>
                                 <div id="fatburnedvalue" class="col-50">
@@ -217,6 +229,8 @@
 
                             </div>
                         </div>
+                        <div class="block-title" id="textMyAchievements">My achievements</div>
+                        <div id="achievements" class="block block-strong"></div>
                     </div>
                 </div>
             </div>
@@ -237,7 +251,7 @@
                         <div id="fabstart" class="fab fab-extended fab-center-bottom">
                             <a href="#">
 
-                                <div class="fab-text">Start</div>
+                                <div class="fab-text" id="textTrackerFABStart">Start</div>
                             </a>
                         </div>
                         <div id="fabgps" class="fab fab-right-top">
@@ -278,11 +292,11 @@
                             </div>
                         </div>
 
-                        <div class="block-title">Parameters</div>
+                        <div class="block-title" id="textParameters">Parameters</div>
                         <div id="parameters" class="block block-strong">
 
                             <div id="bmirow" class="row block">
-                                <div class="col-25">
+                                <div class="col-25" id="textBMI">
                                     Body mass index
                                 </div>
                                 <div id="bmivalue" class="col-25">
@@ -294,7 +308,7 @@
                             </div>
 
                             <div id="safehrrow" class="row block">
-                                <div class="col-25">
+                                <div class="col-25" id="textMaxSafeHR">
                                     Max safe heart rate
                                 </div>
                                 <div id="safehrvalue" class="col-25">
@@ -306,7 +320,7 @@
                             </div>
 
                             <div id="fatpercentagerow" class="row block">
-                                <div class="col-25">
+                                <div class="col-25" id="textBodyFatPercentage">
                                     Body fat percentage
                                 </div>
                                 <div id="fatpercentagevalue" class="col-25">
@@ -317,8 +331,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="block-title">My achievements</div>
-                        <div id="achievements" class="block block-strong"></div>
+
 
                     </div>
                 </div>
@@ -330,58 +343,61 @@
                 <div class="page">
                     <div class="navbar">
                         <div class="navbar-inner">
-                            <div class="title">Run!</div>
+                            <div class="title" id="textPopUpRun">Run!</div>
 
                         </div>
                     </div>
                     <div class="page-content">
-                        <div class="block-title">Parameters</div>
+                        <div class="block-title" id="textPopUpParameters">Parameters</div>
                         <div class="block block-strong">
                             <div class="row">
-                                <div class="col-25">
+                                <div class="col-25 text-align-center">
 
                                     <h4 id="speed">-</h4>
-                                    <p>Speed</p>
+                                    <p id="textFreePopUpSpeed">Speed</p>
                                 </div>
-                                <div class="col-25">
+                                <div class="col-25 text-align-center">
 
                                     <h4 id="traveledDistance">-</h4>
-                                    <p>Distance</p>
+                                    <p id="textFreePopUpDistance">Distance</p>
                                 </div>
-                                <div class="col-25">
+                                <div class="col-25 text-align-center">
 
                                     <h4 id="accuracy">-</h4>
-                                    <p>Accuracy</p>
+                                    <p id="textFreePopUpAccuracy">Accuracy</p>
                                 </div>
-                                <div class="col-25">
+                                <div class="col-25 text-align-center">
 
                                     <h4 id="time">-</h4>
-                                    <p>Time</p>
+                                    <p id="textFreePopUpTime">Time</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="block-title" id="textPopUpMetabolism">Metabolism</div>
+                        <div class="block block-strong">
                             <div class="row">
-                                <div class="col-33">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="adrenalin">-</h4>
-                                    <p>Adrenalin</p>
+                                    <p id="textFreePopUpAdrenalin">Adrenalin</p>
                                 </div>
-                                <div class="col-33">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="noradrenalin">-</h4>
-                                    <p>Noradrenalin</p>
+                                    <p id="textFreePopUpNoradrenalin">Noradrenalin</p>
                                 </div>
-                                <div class="col-33">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="dopamine">-</h4>
-                                    <p>Dopamine</p>
+                                    <p id="textFreePopUpDopamine">Dopamine</p>
                                 </div>
-
                             </div>
+
                         </div>
                         <div id="fabstop" class="fab fab-extended fab-center-bottom">
                             <a href="#">
 
-                                <div class="fab-text">Stop</div>
+                                <div class="fab-text" id="textFreePopUpFABStop">Stop</div>
                             </a>
                         </div>
                     </div>
@@ -395,255 +411,318 @@
                     <div class="navbar">
                         <div class="navbar-inner">
 
-                            <div class="title">Run!</div>
+                            <div class="title" id="textBeginnerPopUpRun">Run!</div>
 
                         </div>
                     </div>
                     <div class="page-content">
-                        <div class="block-title">Parameters</div>
+                        <div class="block-title" id="textBeginnerPopUpParameters">Parameters</div>
                         <div class="block block-strong">
 
                             <div class="row">
-                                <div class="col-33">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="beginnerSpeed">-</h4>
-                                    <p>Speed</p>
+                                    <p id="textBeginnerPopUpSpeed">Speed</p>
                                 </div>
-                                <div class="col-33">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="beginnerTraveledDistance">-</h4>
 
-                                    <p>Distance</p>
+                                    <p id="textBeginnerPopUpDistance">Distance</p>
                                 </div>
-                                <div class="col-33">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="beginnerTime">00:00:00</h4>
-                                    <p>Time</p>
+                                    <p id="textBeginnerPopUpTime">Time</p>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="block-title" id="textBeginnerPopUpMetabolism">Metabolism</div>
+                        <div class="block block-strong">
+                            <div class="col text-align-center">
+                                <div id="beginnerGauge"
+                                     class="gauge beginnergauge"
+                                     data-type="semicircle"
+                                     data-value="0"
+                                     data-value-text="-"
+                                     data-value-text-color="#e91e63"
+                                     data-border-color="#e91e63"
+                                     data-label-text="-"
+                                     data-label-text-color="#333"></div>
                             </div>
                             <div class="row">
 
-                                <div class="col-50">
+                                <div class="col-50 text-align-center">
 
                                     <h4 id="beginnerDopamine">-</h4>
-                                    <p>Current Dopamine</p>
+                                    <p id="textBeginnerPopUpCurrentDopamine">Current Dopamine</p>
                                 </div>
 
-                                <div class="col-50">
+                                <div class="col-50 text-align-center">
 
                                     <h4 id="targetDopamine">-</h4>
-                                    <p>Target Dopamine</p>
+                                    <p id="textBeginnerPopUpTargetDopamine">Target Dopamine</p>
                                 </div>
                             </div>
-
                         </div>
-                        <div id="beginnerfab" class="fab fab-extended fab-center-bottom">
-                            <a href="#">
 
-                                <div class="fab-text">Stop</div>
-                            </a>
-                        </div>
+                    </div>
+                    <div id="beginnerfab" class="fab fab-extended fab-center-bottom">
+                        <a href="#">
+
+                            <div class="fab-text" id="textBeginnerPopUpFABStop">Stop</div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-        <!-- Login Screen -->
-        <div class="login-screen" id="my-login-screen">
-            <div class="view">
-                <div class="page">
-                    <div class="page-content login-screen-content">
-                        <div class="login-screen-title">Login</div>
-                        <div class="list">
-                            <ul>
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Username</div>
-                                        <div class="item-input-wrap">
-                                            <input type="text" name="username" placeholder="Your username">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Password</div>
-                                        <div class="item-input-wrap">
-                                            <input type="password" name="password" placeholder="Your password">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="list">
-                            <ul>
-                                <li>
-                                    <a href="#" class="item-link list-button login-button">Sign In</a>
-                                </li>
-                            </ul>
-                            <div class="block-footer">Have no account yet?<br>Register and join our society.<br> <a href="#" id="createNewAcc" class="item-link list-button">Create new account</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Registration Screen -->
-        <div class="login-screen" id="my-registration-screen">
-            <div class="view">
-                <div class="page">
-                    <div class="page-content login-screen-content">
-                        <div class="login-screen-title">Login</div>
-                        <div class="list">
-                            <ul>
-                                <!-- First name -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">First name</div>
-                                        <div class="item-input-wrap">
-                                            <input type="text" name="firstname" placeholder="Your first name">
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Second name -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Second name</div>
-                                        <div class="item-input-wrap">
-                                            <input type="text" name="secondname" placeholder="Your second name">
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Gender -->
-                                <li class="item-content item-input">
-
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Gender</div>
-                                        <div class="item-input-wrap input-dropdown-wrap">
-                                            <select id="genderselector" placeholder="Please choose...">
-                                                <option value="Male">Female</option>
-                                                <option value="Female">Male</option>
-                                                <option value="Other">Other</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Birthday -->
-                                <li class="item-content item-input">
-
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Birthday</div>
-                                        <div class="item-input-wrap">
-                                            <input type="date" name="birthday" value="2000-04-30" placeholder="Please choose..." required validate>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Body mass -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Body mass</div>
-                                        <div class="item-input-wrap">
-                                            <div class="row">
-                                                <div class="col-50">
-                                                    <input type="number" name="bodymass" placeholder="Your body mass" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
-                                                </div>
-                                                <div class="col-50">
-                                                    <select id="massselector" placeholder="Please choose...">
-                                                        <option value="kg">kg</option>
-                                                        <option value="lbs">lbs</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Height -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Height</div>
-                                        <div class="item-input-wrap">
-                                            <div class="row">
-                                                <div class="col-50">
-                                                    <input type="number" name="height" placeholder="Height" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
-                                                </div>
-                                                <div class="col-50">
-                                                    <select id="heightselector" placeholder="Please choose...">
-                                                        <option value="cm">cm</option>
-                                                        <option value="inch">inch</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Email -->
-                                <li class="item-content item-input">
-
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">E-mail</div>
-                                        <div class="item-input-wrap">
-                                            <input type="email" name="email" placeholder="Your e-mail" required validate>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Login -->
-                                <li class="item-content item-input">
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Login</div>
-                                        <div class="item-input-wrap">
-                                            <input type="text" name="login" placeholder="Login" required validate>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Password -->
-                                <li class="item-content item-input">
-
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Password</div>
-                                        <div class="item-input-wrap">
-                                            <input type="password" name="password" placeholder="Your password" required validate>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Second time password -->
-                                <li class="item-content item-input">
-
-                                    <div class="item-inner">
-                                        <div class="item-title item-label">Password</div>
-                                        <div class="item-input-wrap">
-                                            <input type="password" name="password2" placeholder="Your password one more time" required validate>
-
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="list">
-                            <ul>
-                                <li>
-                                    <a href="#" id="register-button" class="item-link list-button">Register</a>
-                                </li>
-                            </ul>
-                            <div class="block-footer">Private policy</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
 
 
+
+    <!-- Login Screen -->
+    <div class="login-screen" id="my-login-screen">
+        <div class="view">
+            <div class="page">
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title" id="textLoginScreenLogin">Login</div>
+                    <div class="list">
+                        <ul>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textLoginScreenUsername">Username</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" name="username" placeholder="Your username" id="loginNameInput">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textLoginScreenPassword">Password</div>
+                                    <div class="item-input-wrap">
+                                        <input type="password" name="password" placeholder="Your password" id="loginPasswordInput">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#" class="item-link list-button login-button" id="textLoginScreenSignInButton">Sign In</a>
+                            </li>
+                        </ul>
+                        <div class="block-footer" id="textLoginScreenHaveNoAccount">Have no account yet? Register and join our society.</div> <a href="#" id="createNewAcc" class="item-link list-button">Create new account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language and Metrics Screen -->
+    <div class="login-screen" id="language-and-metrics-screen">
+        <div class="view">
+            <div class="page">
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title" id="textLanguageScreenLanguage">Language and units</div>
+                    <div class="list">
+                        <ul>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textLanguage">Language</div>
+                                    <div class="item-input-wrap input-dropdown-wrap">
+                                        <select id="languageselector" placeholder="Please choose...">
+                                            <option value="en" id="textLanguageEnglish">English</option>
+                                            <option value="ru" id="textLanguageRussian">Русский</option>
+                                        
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textMetricsItems">Units</div>
+                                    <div class="item-input-wrap input-dropdown-wrap">
+                                        <select id="unitselector" placeholder="Please choose...">
+                                            <option value="metric" id="textMetric">Metric</option>
+                                            <option value="imperial" id="textImperial">Imperial</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#" class="item-link list-button" id="textSaveAndExitButton">Save and exit</a>
+                            </li>
+                        </ul>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Registration Screen -->
+    <div class="login-screen" id="my-registration-screen">
+        <div class="view">
+            <div class="page">
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title" id="textRegistrationScreenRegistration">Registration</div>
+                    <div class="list">
+                        <ul>
+                            <!-- First name -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenFirstName">First name</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" name="firstname" placeholder="Your first name" id="registrationFirstNameInput">
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Second name -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenSecondName">Second name</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" name="secondname" placeholder="Your second name" id="registrationSecondNameInput">
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Gender -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenGender">Gender</div>
+                                    <div class="item-input-wrap input-dropdown-wrap">
+                                        <select id="genderselector" placeholder="Please choose...">
+                                            <option value="Female" id="textRegistrationScreenGenderFemale">Female</option>
+                                            <option value="Male" id="textRegistrationScreenGenderMale">Male</option>
+                                            <option value="Other" id="textRegistrationScreenGenderOther">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Birthday -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenBirthday">Birthday</div>
+                                    <div class="item-input-wrap">
+                                        <input type="date" name="birthday" value="2000-04-30" placeholder="Please choose..." required validate>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Body mass -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenBodyMass">Body mass</div>
+                                    <div class="item-input-wrap">
+                                        <div class="row">
+                                            <div class="col-50">
+                                                <input type="number" name="bodymass" placeholder="Your body mass" required validate pattern="[0-9]*" data-error-message="Only numbers please!" id="registrationBodyMassInput">
+                                            </div>
+                                            <div class="col-50">
+                                                <select id="massselector" placeholder="Please choose...">
+                                                    <option value="kg" id="textRegistrationScreenKg">kg</option>
+                                                    <option value="lbs" id="textRegistrationScreenLbs">lbs</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Height -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationScreenHeight">Height</div>
+                                    <div class="item-input-wrap">
+                                        <div class="row">
+                                            <div class="col-50">
+                                                <input type="number" name="height" placeholder="Height" required validate pattern="[0-9]*" data-error-message="Only numbers please!" id="registrationHeightInput">
+                                            </div>
+                                            <div class="col-50">
+                                                <select id="heightselector" placeholder="Please choose...">
+                                                    <option value="cm" id="textRegistrationScreenCm">cm</option>
+                                                    <option value="inch" id="textRegistrationScreenInch">inch</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Email -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label">E-mail</div>
+                                    <div class="item-input-wrap">
+                                        <input type="email" name="email" placeholder="Your e-mail" required validate id="registrationEmailInput">
+
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Login -->
+                            <li class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationLogin">Login</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" name="login" placeholder="Login" required validate id="textRegistrationLoginInput">
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Password -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationPassword">Password</div>
+                                    <div class="item-input-wrap">
+                                        <input type="password" name="password" placeholder="Your password" required validate id="textRegistrationPasswordInput">
+
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Second time password -->
+                            <li class="item-content item-input">
+
+                                <div class="item-inner">
+                                    <div class="item-title item-label" id="textRegistrationPassword2">Password</div>
+                                    <div class="item-input-wrap">
+                                        <input type="password" name="password2" placeholder="Your password one more time" required validate id="textRegistrationPasswordInput2">
+
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#" id="register-button" class="item-link list-button">Register</a>
+                            </li>
+                        </ul>
+                        <div class="block-footer">Private policy and terms of use</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <!-- Cordova -->
-  
-        <script src="cordova.js"></script>
- 
+
+    <script src="cordova.js"></script>
+
     <script src="scripts/leaflet.js"></script>
 
     <!-- Framework7 library -->
@@ -655,7 +734,7 @@
     <script src="js/neuronetwork2.js"></script>
     <!-- Your custom app scripts -->
     <script src="js/app.js"></script>
-
+    <script src="js/languages.js"></script>
 </body>
 
 

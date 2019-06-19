@@ -31,6 +31,9 @@
         },
         "cordova-plugin-flurryanalytics": {
             "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
         }
     },
     "dependent_plugins": {
