@@ -119,7 +119,7 @@
                         <i class="icon material-icons md-only">trending_up</i>
                         <span class="tabbar-label" id="textTabProgress">Progress</span>
                     </a>
-                    <a href="#view-runtracker" class="tab-link">
+                    <a href="#view-runtracker" id="tabruntracker" class="tab-link">
                         <i class="icon f7-icons ios-only">flag</i>
                         <i class="icon f7-icons ios-only icon-ios-fill">flag</i>
                         <i class="icon material-icons md-only">flag</i>
@@ -152,7 +152,7 @@
                                     <i class="icon material-icons md-only">menu</i>
                                 </a>
                             </div>
-                            <div class="title">Runner High</div>
+                            <div class="title" id="programmtitle">SynRun</div>
                         </div>
                     </div>
                     <div id="programmview" class="page-content">
@@ -171,7 +171,7 @@
                     <div class="navbar">
                         <div class="navbar-inner sliding">
 
-                            <div class="title">Runner High</div>
+                            <div class="title" id="progresstitle">SynRun</div>
                         </div>
                     </div>
                     <div class="page-content">
@@ -184,7 +184,9 @@
                                 <div id="currentlevelvalue" class="col-50">
 
                                 </div>
+
                             </div>
+                            <div class="progressbar" data-progress="20" id="levelprogressbar"><span></span></div>
 
                         </div>
 
@@ -240,7 +242,7 @@
                     <div class="navbar">
                         <div class="navbar-inner sliding">
 
-                            <div class="title">Runner High</div>
+                            <div class="title" id="trackertitle">SynRun</div>
                         </div>
                     </div>
                     <div class="page-content">
@@ -279,7 +281,7 @@
                                     <i class="icon material-icons md-only">menu</i>
                                 </a>
                             </div>
-                            <div class="title">Runner High</div>
+                            <div class="title" id="profileTitle">SynRun</div>
                         </div>
                     </div>
                     <div class="page-content">
@@ -351,22 +353,18 @@
                         <div class="block-title" id="textPopUpParameters">Parameters</div>
                         <div class="block block-strong">
                             <div class="row">
-                                <div class="col-25 text-align-center">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="speed">-</h4>
                                     <p id="textFreePopUpSpeed">Speed</p>
                                 </div>
-                                <div class="col-25 text-align-center">
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="traveledDistance">-</h4>
                                     <p id="textFreePopUpDistance">Distance</p>
                                 </div>
-                                <div class="col-25 text-align-center">
-
-                                    <h4 id="accuracy">-</h4>
-                                    <p id="textFreePopUpAccuracy">Accuracy</p>
-                                </div>
-                                <div class="col-25 text-align-center">
+                             
+                                <div class="col-33 text-align-center">
 
                                     <h4 id="time">-</h4>
                                     <p id="textFreePopUpTime">Time</p>

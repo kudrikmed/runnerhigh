@@ -1,5 +1,7 @@
 ﻿var language = localStorage.getItem('language');
 
+var textAppName = "SynRun";
+
 var textReadMore = "Read more";
 var textClose = "Close";
 var textkg = "kg";
@@ -16,9 +18,12 @@ var textPgMl = "pg/mL";
 var textKmH = "km/h";
 var textMiH = "mi/h"
 var textm = "mi"
-var textBeginner = "beginner";
-var textIntermadiate = "intermediate";
-var textPro = "pro";
+var textBeginnerMale = "beginner";
+var textIntermediateMale = "intermediate";
+var textProMale = "pro";
+var textBeginnerFemale = "beginner";
+var textIntermediateFemale = "intermediate";
+var textProFemale = "pro";
 var textOfTarget = "of target";
 var textEnterUsername = "Please, enter username";
 var textEnterPassword = "Please, enter password!";
@@ -36,6 +41,9 @@ var textAlreadyLoginEmail = "Sorry, accout with these login and email already ex
 var textAlreadyLogin = "Sorry, accout with this login already exists!";
 var textAlreadyEmail = "Sorry, accout with this e-mail already exists!";
 var textErrorDuringRegistration = "Error during registration";
+var newsLanguage = "eng";
+var textEasyStart = "Easy start";
+var textEasyStartDescription = '<p>For many, running is hard, exhausting work that brings neither joy nor pleasure. To start running, we have to overcome such a powerful factor as our own laziness. For many of us, the hardest part in running is getting off the couch. In addition, you have to change the usual rhythm of life.</p><p>It is difficult not only to start running, but not to give up after the first week of training. Mark Twain said: “Nothing is easier than quitting. I have done it a hundred times.” By exerting willpower, you can force yourself to do months and even years. But, apart from negative emotions, one can hardly count on any positive result.</p><p>We believe that sport is an inexhaustible source of joy and positive. Therefore, in order to teach people to experience happiness from running, we have developed this system of training. This program is designed to create a positive motivation for sports. It is based on modern scientific data from international studies on the effect of physical activity on a person’s emotional state.</p><p>You can run at any time, at any speed and at any pace. Your goal is to reach the target value of dopamine "hormone of joy". A high level of dopamine will create conditions for fixing positive emotions and forming a habit.</p><p>Start right now! Seriously, a little bit more and it may be too late.</p>';
 
 
 
@@ -149,7 +157,7 @@ if (language.indexOf("ru") > -1) {
     textKmH = "км/ч";
     textMiH = "ми/ч"
     textOfTarget = "от цели";
-    textEnterUsername = "Пожалуйста, введите логин!";
+    textEnterUsername = "Пожалуйста, введите имя пользователя!";
     textEnterPassword = "Пожалуйста, введите пароль!";
     textNoSuchAccount = "Пользователь с таким именем не найден!";
     textCheckPassword = "Пожалуйста, проверьте пароль!";
@@ -165,9 +173,15 @@ if (language.indexOf("ru") > -1) {
     textAlreadyLogin = "Аккаунт с таким логином уже существует!";
     textAlreadyEmail = "Аккаунт с таким e-mail уже существует!";
     textErrorDuringRegistration = "Ошибка в ходе регистрации!";
-    textBeginner = "начинающий";
-    textIntermadiate = "продолжающий";
-    textPro = "профи";
+    textBeginnerMale = "симпатяга";
+    textIntermediateMale = "красавчик";
+    textProMale = "как Бред Пит, чтолько лучше";
+    textBeginnerFemale = "обаяшка";
+    textIntermediateFemale = "красотка";
+    textProFemale = "топчик";
+    newsLanguage = "rus";
+    textEasyStart = "Легкий старт";
+    textEasyStartDescription = '<p>Для многих бег – это тяжелая изматывающая работа, которая не приносит ни радости, ни удовольствия. Чтобы начать бегать, нам приходится преодолеть такой мощный фактор, как собственная лень. Для многих из нас самое сложное в беге – это слезть с дивана. Кроме того, приходится изменить привычный ритм жизни.</p><p>Сложно не только начать бегать, но и не сдаться после первой недели тренировок. Марк Твен говорил: «Нет ничего более простого, чем бросить курить. Я сотни раз так делал». Напрягая силу воли, можно заставить себя заниматься месяцы и даже годы. Но, кроме негативных эмоций, вряд ли можно рассчитывать на какой-либо положительный результат.</p><p>Мы считаем, что спорт – это неиссякаемый источник радости и позитива. Поэтому, чтобы научить людей испытывать счастье от бега, мы разработали данную систему тренировок. Эта программа создана для формирования положительной мотивации к занятиям спортом. Она базируется на современных научных данных международных исследований, посвященных изучению влияния физической активности на эмоциональное состояние человека.</p><p>Вы можете бежать в любое время, с любой скоростью и в любом темпе. Ваша цель – достичь заданного значения «гормона радости» дофамина. Высокий уровень дофамина создаст условия для закрепления положительных эмоций и формирования привычки.</p><p>Начинайте прямо сейчас! Серьезно, еще чуть-чуть и может быть уже поздно.</p>';
 }
 
 if (language.indexOf("en") > -1) {
@@ -295,9 +309,15 @@ if (language.indexOf("en") > -1) {
     textAlreadyLogin = "Sorry, accout with this login already exists!";
     textAlreadyEmail = "Sorry, accout with this e-mail already exists!";
     textErrorDuringRegistration = "Error during registration";
-    textBeginner = "beginner";
-    textIntermadiate = "intermediate";
-    textPro = "pro";
+    textBeginnerMale = "beginner";
+    textIntermediateMale = "intermediate";
+    textProMale = "pro";
+    textBeginnerFemale = "beginner";
+    textIntermediateFemale = "intermediate";
+    textProFemale = "pro";
+    newsLanguage = "eng";
+    textEasyStart = "Easy start";
+    textEasyStartDescription = '<p>For many, running is hard, exhausting work that brings neither joy nor pleasure. To start running, we have to overcome such a powerful factor as our own laziness. For many of us, the hardest part in running is getting off the couch. In addition, you have to change the usual rhythm of life.</p><p>It is difficult not only to start running, but not to give up after the first week of training. Mark Twain said: “Nothing is easier than quitting. I have done it a hundred times.” By exerting willpower, you can force yourself to do months and even years. But, apart from negative emotions, one can hardly count on any positive result.</p><p>We believe that sport is an inexhaustible source of joy and positive. Therefore, in order to teach people to experience happiness from running, we have developed this system of training. This program is designed to create a positive motivation for sports. It is based on modern scientific data from international studies on the effect of physical activity on a person’s emotional state.</p><p>You can run at any time, at any speed and at any pace. Your goal is to reach the target value of dopamine "hormone of joy". A high level of dopamine will create conditions for fixing positive emotions and forming a habit.</p><p>Start right now! Seriously, a little bit more and it may be too late.</p>';
 }
 
 function updateLanguage() {
@@ -413,7 +433,7 @@ function updateLanguage() {
         textKmH = "км/ч";
         textMiH = "ми/ч"
         textOfTarget = "от цели";
-        textEnterUsername = "Пожалуйста, введите логин!";
+        textEnterUsername = "Пожалуйста, введите имя пользователя!";
         textEnterPassword = "Пожалуйста, введите пароль!";
         textNoSuchAccount = "Пользователь с таким именем не найден!";
         textCheckPassword = "Пожалуйста, проверьте пароль!";
@@ -429,9 +449,15 @@ function updateLanguage() {
         textAlreadyLogin = "Аккаунт с таким логином уже существует!";
         textAlreadyEmail = "Аккаунт с таким e-mail уже существует!";
         textErrorDuringRegistration = "Ошибка в ходе регистрации!";
-        textBeginner = "начинающий";
-        textIntermadiate = "продолжающий";
-        textPro = "профи";
+        textBeginnerMale = "симпатяга";
+        textIntermediateMale = "красавчик";
+        textProMale = "как Бред Пит, чтолько лучше";
+        textBeginnerFemale = "обаяшка";
+        textIntermediateFemale = "красотка";
+        textProFemale = "топчик";
+        newsLanguage = "rus";
+        textEasyStart = "Легкий старт";
+        textEasyStartDescription = '<p>Для многих бег – это тяжелая изматывающая работа, которая не приносит ни радости, ни удовольствия. Чтобы начать бегать, нам приходится преодолеть такой мощный фактор, как собственная лень. Для многих из нас самое сложное в беге – это слезть с дивана. Кроме того, приходится изменить привычный ритм жизни.</p><p>Сложно не только начать бегать, но и не сдаться после первой недели тренировок. Марк Твен говорил: «Нет ничего более простого, чем бросить курить. Я сотни раз так делал». Напрягая силу воли, можно заставить себя заниматься месяцы и даже годы. Но, кроме негативных эмоций, вряд ли можно рассчитывать на какой-либо положительный результат.</p><p>Мы считаем, что спорт – это неиссякаемый источник радости и позитива. Поэтому, чтобы научить людей испытывать счастье от бега, мы разработали данную систему тренировок. Эта программа создана для формирования положительной мотивации к занятиям спортом. Она базируется на современных научных данных международных исследований, посвященных изучению влияния физической активности на эмоциональное состояние человека.</p><p>Вы можете бежать в любое время, с любой скоростью и в любом темпе. Ваша цель – достичь заданного значения «гормона радости» дофамина. Высокий уровень дофамина создаст условия для закрепления положительных эмоций и формирования привычки.</p><p>Начинайте прямо сейчас! Серьезно, еще чуть-чуть и может быть уже поздно.</p>';
     }
 
     if (language.indexOf("en") > -1) {
@@ -559,9 +585,15 @@ function updateLanguage() {
         textAlreadyLogin = "Sorry, accout with this login already exists!";
         textAlreadyEmail = "Sorry, accout with this e-mail already exists!";
         textErrorDuringRegistration = "Error during registration";
-        textBeginner = "beginner";
-        textIntermadiate = "intermediate";
-        textPro = "pro";
+        textBeginnerMale = "beginner";
+        textIntermediateMale = "intermediate";
+        textProMale = "pro";
+        textBeginnerFemale = "beginner";
+        textIntermediateFemale = "intermediate";
+        textProFemale = "pro";
+        newsLanguage = "eng";
+        textEasyStart = "Easy start";
+        textEasyStartDescription = '<p>For many, running is hard, exhausting work that brings neither joy nor pleasure. To start running, we have to overcome such a powerful factor as our own laziness. For many of us, the hardest part in running is getting off the couch. In addition, you have to change the usual rhythm of life.</p><p>It is difficult not only to start running, but not to give up after the first week of training. Mark Twain said: “Nothing is easier than quitting. I have done it a hundred times.” By exerting willpower, you can force yourself to do months and even years. But, apart from negative emotions, one can hardly count on any positive result.</p><p>We believe that sport is an inexhaustible source of joy and positive. Therefore, in order to teach people to experience happiness from running, we have developed this system of training. This program is designed to create a positive motivation for sports. It is based on modern scientific data from international studies on the effect of physical activity on a person’s emotional state.</p><p>You can run at any time, at any speed and at any pace. Your goal is to reach the target value of dopamine "hormone of joy". A high level of dopamine will create conditions for fixing positive emotions and forming a habit.</p><p>Start right now! Seriously, a little bit more and it may be too late.</p>';
     }
 
     else {
