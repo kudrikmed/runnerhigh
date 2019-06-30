@@ -34,6 +34,26 @@
         },
         "cordova-plugin-globalization": {
             "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-inapppurchase": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION": "This app requires photo library access to function properly.",
+            "PHOTO_LIBRARY_USAGE_DESCRIPTION": "This app requires photo library access to function properly.",
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "nl.madebymark.share": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-apprate": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
         }
     },
     "dependent_plugins": {
@@ -41,6 +61,15 @@
             "PACKAGE_NAME": "io.cordova.myapp41018d"
         },
         "cordova-plugin-cocoapod-support": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-nativestorage": {
             "PACKAGE_NAME": "com.cordova.runnerhigh"
         }
     }
