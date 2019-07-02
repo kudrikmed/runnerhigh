@@ -21,9 +21,9 @@ var textm = "mi"
 var textBeginnerMale = "beginner";
 var textIntermediateMale = "intermediate";
 var textProMale = "pro";
-var textBeginnerFemale = "beginner";
-var textIntermediateFemale = "intermediate";
-var textProFemale = "pro";
+var textBeginnerFemale = "cutie";
+var textIntermediateFemale = "bombshell";
+var textProFemale = "princess";
 var textOfTarget = "of target";
 var textEnterUsername = "Please, enter username";
 var textEnterPassword = "Please, enter password!";
@@ -44,8 +44,22 @@ var textErrorDuringRegistration = "Error during registration";
 var newsLanguage = "eng";
 var textEasyStart = "Easy start";
 var textEasyStartDescription = '<p>For many, running is hard, exhausting work that brings neither joy nor pleasure. To start running, we have to overcome such a powerful factor as our own laziness. For many of us, the hardest part in running is getting off the couch. In addition, you have to change the usual rhythm of life.</p><p>It is difficult not only to start running, but not to give up after the first week of training. Mark Twain said: “Nothing is easier than quitting. I have done it a hundred times.” By exerting willpower, you can force yourself to do months and even years. But, apart from negative emotions, one can hardly count on any positive result.</p><p>We believe that sport is an inexhaustible source of joy and positive. Therefore, in order to teach people to experience happiness from running, we have developed this system of training. This program is designed to create a positive motivation for sports. It is based on modern scientific data from international studies on the effect of physical activity on a person’s emotional state.</p><p>You can run at any time, at any speed and at any pace. Your goal is to reach the target value of dopamine "hormone of joy". A high level of dopamine will create conditions for fixing positive emotions and forming a habit.</p><p>Start right now! Seriously, a little bit more and it may be too late.</p>';
+var textForShareFemale = "I have successfully completed training with SynRun, by running";
+var textForShareMale = "I have successfully completed training with SynRun, by running";
+var textInZa = "in";
+var textForLevelShareFemale = "SynRun thinks, I'm";
+var textForLevelShareMale = "SynRun thinks, I'm";
 
 
+var textRatingWouldYouMind = "Would you mind rating SynRun?";
+var textRatingMessage = "It won’t take more than a minute and helps to promote our app. Thanks for your support!";
+var textRatingCancelButton = "No, Thanks";
+var textRatingRemindMeLater = "Remind Me Later";
+var textRatingRateItNow = "Rate It Now";
+var textRatingYes = "Yes!"
+var textRatingNotReally = "Not really";
+var textRatingDoYouLike = "Do you like using SynRun?";
+var textRatingFeedBack = "Mind giving us some feedback?";
 
 
 if (language.indexOf("ru") > -1) {
@@ -131,6 +145,23 @@ if (language.indexOf("ru") > -1) {
     $$('#textRegistrationPassword2').text("Пароль");
     $$('#textRegistrationPasswordInput2').attr('placeholder', "Повторите пароль");
     $$('#register-button').text("Регистрация");
+    $$('#textSuccessShare').text("Рассказать");
+    $$('#textShareLevel').text("Рассказать");
+    $$('#textBeginnerCongradulationsTitle').text("Поздравления!");
+    $$('#textBlockTitleCongrads').text("Ура!");
+    $$('#textSuccessfulTraining').text("Вы успешно закончили тренировку");
+    $$('#congradulationsPopupDistance').text("Расстояние");
+    $$('#congradulationsPopupAverageSpeed').text("Средняя скорость");
+    $$('#congradulationsPopupTime').text("Время");
+    $$('#trackerPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
+    $$('#beginnerPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
+    $$('#textFreeSuccessShare').text("Рассказать");
+    $$('#textCongradulationsTitle').text("Поздравления!");
+    $$('#textBlockTitleCongradulations').text("Ура!");
+    $$('#textSuccessfulFreeTraining').text("Вы успешно закончили тренировку");
+    $$('#congradulationsDistance').text("Расстояние");
+    $$('#congradulationsAverageSpeed').text("Средняя скорость");
+    $$('#congradulationsTime').text("Время");
 
 
     $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
@@ -182,6 +213,21 @@ if (language.indexOf("ru") > -1) {
     newsLanguage = "rus";
     textEasyStart = "Легкий старт";
     textEasyStartDescription = '<p>Для многих бег – это тяжелая изматывающая работа, которая не приносит ни радости, ни удовольствия. Чтобы начать бегать, нам приходится преодолеть такой мощный фактор, как собственная лень. Для многих из нас самое сложное в беге – это слезть с дивана. Кроме того, приходится изменить привычный ритм жизни.</p><p>Сложно не только начать бегать, но и не сдаться после первой недели тренировок. Марк Твен говорил: «Нет ничего более простого, чем бросить курить. Я сотни раз так делал». Напрягая силу воли, можно заставить себя заниматься месяцы и даже годы. Но, кроме негативных эмоций, вряд ли можно рассчитывать на какой-либо положительный результат.</p><p>Мы считаем, что спорт – это неиссякаемый источник радости и позитива. Поэтому, чтобы научить людей испытывать счастье от бега, мы разработали данную систему тренировок. Эта программа создана для формирования положительной мотивации к занятиям спортом. Она базируется на современных научных данных международных исследований, посвященных изучению влияния физической активности на эмоциональное состояние человека.</p><p>Вы можете бежать в любое время, с любой скоростью и в любом темпе. Ваша цель – достичь заданного значения «гормона радости» дофамина. Высокий уровень дофамина создаст условия для закрепления положительных эмоций и формирования привычки.</p><p>Начинайте прямо сейчас! Серьезно, еще чуть-чуть и может быть уже поздно.</p>';
+    textForShareFemale = "Я успешно завершила тренировку с SynRun, пробежав";
+    textForShareMale = "Я успешно завершил тренировку с SynRun, пробежав";
+    textInZa = "за";
+    textForLevelShareFemale = "SynRun считает, что я";
+    textForLevelShareMale = "SynRun считает, что я";
+    textRatingWouldYouMind = "Оцените SynRun";
+    textRatingMessage = "Это не займет больше минуты и очень поможет нам продвигать приложение. Спасибо за поддержку!";
+    textRatingCancelButton = "Нет, спасибо";
+    textRatingRemindMeLater = "Напомнить позже";
+    textRatingRateItNow = "Оценить сейчас";
+    textRatingYes = "Да!"
+    textRatingNotReally = "Не особенно";
+    textRatingDoYouLike = "Нравится пользоваться SynRun?";
+    textRatingFeedBack = "Хотите сообщить нам замечания?";
+
 }
 
 if (language.indexOf("en") > -1) {
@@ -267,6 +313,24 @@ if (language.indexOf("en") > -1) {
     $$('#textRegistrationPassword2').text("Password");
     $$('#textRegistrationPasswordInput2').attr('placeholder', "Password one more time");
     $$('#register-button').text("Registration");
+    $$('#textSuccessShare').text("Share");
+    $$('#textShareLevel').text("Share");
+    $$('#textBeginnerCongradulationsTitle').text("Congradulations!");
+    $$('#textBlockTitleCongrads').text("Viva!");
+    $$('#textSuccessfulTraining').text("You have successfully completed training!");
+    $$('#congradulationsPopupDistance').text("Distance");
+    $$('#congradulationsPopupAverageSpeed').text("Average speed");
+    $$('#congradulationsPopupTime').text("Time");
+    $$('#trackerPopupDisclaimer').text("For correct operation of the program, do not put the device into sleep mode");
+    $$('#beginnerPopupDisclaimer').text("For correct operation of the program, do not put the device into sleep mode");
+    $$('#textFreeSuccessShare').text("Share");
+    $$('#textCongradulationsTitle').text("Congradulations!");
+    $$('#textBlockTitleCongradulations').text("Viva!");
+    $$('#textSuccessfulFreeTraining').text("You have successfully completed training!");
+    $$('#congradulationsDistance').text("Distance");
+    $$('#congradulationsAverageSpeed').text("Average speed");
+    $$('#congradulationsTime').text("Time");
+
 
 
     $$('#textLanguageScreenLanguage').text("Language and units");
@@ -312,12 +376,28 @@ if (language.indexOf("en") > -1) {
     textBeginnerMale = "beginner";
     textIntermediateMale = "intermediate";
     textProMale = "pro";
-    textBeginnerFemale = "beginner";
-    textIntermediateFemale = "intermediate";
-    textProFemale = "pro";
+    textBeginnerFemale = "cutie";
+    textIntermediateFemale = "bombshell";
+    textProFemale = "princess";
     newsLanguage = "eng";
     textEasyStart = "Easy start";
     textEasyStartDescription = '<p>For many, running is hard, exhausting work that brings neither joy nor pleasure. To start running, we have to overcome such a powerful factor as our own laziness. For many of us, the hardest part in running is getting off the couch. In addition, you have to change the usual rhythm of life.</p><p>It is difficult not only to start running, but not to give up after the first week of training. Mark Twain said: “Nothing is easier than quitting. I have done it a hundred times.” By exerting willpower, you can force yourself to do months and even years. But, apart from negative emotions, one can hardly count on any positive result.</p><p>We believe that sport is an inexhaustible source of joy and positive. Therefore, in order to teach people to experience happiness from running, we have developed this system of training. This program is designed to create a positive motivation for sports. It is based on modern scientific data from international studies on the effect of physical activity on a person’s emotional state.</p><p>You can run at any time, at any speed and at any pace. Your goal is to reach the target value of dopamine "hormone of joy". A high level of dopamine will create conditions for fixing positive emotions and forming a habit.</p><p>Start right now! Seriously, a little bit more and it may be too late.</p>';
+    textForShareFemale = "I have successfully completed training with SynRun, by running";
+    textForShareMale = "I have successfully completed training with SynRun, by running";
+    textInZa = "in";
+    textForLevelShareFemale = "SynRun thinks, I'm";
+    textForLevelShareMale = "SynRun thinks, I'm";
+    textRatingWouldYouMind = "Would you mind rating SynRun?";
+    textRatingMessage = "It won’t take more than a minute and helps to promote our app. Thanks for your support!";
+    textRatingCancelButton = "No, Thanks";
+    textRatingRemindMeLater = "Remind Me Later";
+    textRatingRateItNow = "Rate It Now";
+    textRatingYes = "Yes!"
+    textRatingNotReally = "Not really";
+    textRatingDoYouLike = "Do you like using SynRun?";
+    textRatingFeedBack = "Mind giving us some feedback?";
+
+
 }
 
 function updateLanguage() {
@@ -407,6 +487,24 @@ function updateLanguage() {
         $$('#textRegistrationPassword2').text("Пароль");
         $$('#textRegistrationPasswordInput2').attr('placeholder', "Повторите пароль");
         $$('#register-button').text("Регистрация");
+        $$('#textSuccessShare').text("Рассказать");
+        $$('#textShareLevel').text("Рассказать");
+        $$('#textBeginnerCongradulationsTitle').text("Поздравления!");
+        $$('#textBlockTitleCongrads').text("Ура!");
+        $$('#textSuccessfulTraining').text("Вы успешно закончили тренировку!");
+        $$('#congradulationsPopupDistance').text("Расстояние");
+        $$('#congradulationsPopupAverageSpeed').text("Средняя скорость");
+        $$('#congradulationsPopupTime').text("Время");
+        $$('#trackerPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
+        $$('#beginnerPopupDisclaimer').text("Для корректной работы программы не переводите устройство в спящий режим");
+        $$('#textFreeSuccessShare').text("Рассказать");
+        $$('#textCongradulationsTitle').text("Поздравления!");
+        $$('#textBlockTitleCongradulations').text("Ура!");
+        $$('#textSuccessfulFreeTraining').text("Вы успешно закончили тренировку");
+        $$('#congradulationsDistance').text("Расстояние");
+        $$('#congradulationsAverageSpeed').text("Средняя скорость");
+        $$('#congradulationsTime').text("Время");
+
 
 
         $$('#textLanguageScreenLanguage').text("Язык и единицы измерения");
@@ -458,6 +556,20 @@ function updateLanguage() {
         newsLanguage = "rus";
         textEasyStart = "Легкий старт";
         textEasyStartDescription = '<p>Для многих бег – это тяжелая изматывающая работа, которая не приносит ни радости, ни удовольствия. Чтобы начать бегать, нам приходится преодолеть такой мощный фактор, как собственная лень. Для многих из нас самое сложное в беге – это слезть с дивана. Кроме того, приходится изменить привычный ритм жизни.</p><p>Сложно не только начать бегать, но и не сдаться после первой недели тренировок. Марк Твен говорил: «Нет ничего более простого, чем бросить курить. Я сотни раз так делал». Напрягая силу воли, можно заставить себя заниматься месяцы и даже годы. Но, кроме негативных эмоций, вряд ли можно рассчитывать на какой-либо положительный результат.</p><p>Мы считаем, что спорт – это неиссякаемый источник радости и позитива. Поэтому, чтобы научить людей испытывать счастье от бега, мы разработали данную систему тренировок. Эта программа создана для формирования положительной мотивации к занятиям спортом. Она базируется на современных научных данных международных исследований, посвященных изучению влияния физической активности на эмоциональное состояние человека.</p><p>Вы можете бежать в любое время, с любой скоростью и в любом темпе. Ваша цель – достичь заданного значения «гормона радости» дофамина. Высокий уровень дофамина создаст условия для закрепления положительных эмоций и формирования привычки.</p><p>Начинайте прямо сейчас! Серьезно, еще чуть-чуть и может быть уже поздно.</p>';
+        textForShareFemale = "Я успешно завершила тренировку с SynRun, пробежав";
+        textForShareMale = "Я успешно завершил тренировку с SynRun, пробежав";
+        textInZa = "за";
+        textForLevelShareFemale = "SynRun считает, что я";
+        textForLevelShareMale = "SynRun считает, что я";
+        textRatingWouldYouMind = "Оцените SynRun";
+        textRatingMessage = "Это не займет больше минуты и очень поможет нам продвигать приложение. Спасибо за поддержку!";
+        textRatingCancelButton = "Нет, спасибо";
+        textRatingRemindMeLater = "Напомнить позже";
+        textRatingRateItNow = "Оценить сейчас";
+        textRatingYes = "Да!"
+        textRatingNotReally = "Не особенно";
+        textRatingDoYouLike = "Нравится пользоваться SynRun?";
+        textRatingFeedBack = "Хотите сообщить нам замечания?";
     }
 
     if (language.indexOf("en") > -1) {
@@ -543,6 +655,23 @@ function updateLanguage() {
         $$('#textRegistrationPassword2').text("Password");
         $$('#textRegistrationPasswordInput2').attr('placeholder', "Password one more time");
         $$('#register-button').text("Registration");
+        $$('#textSuccessShare').text("Share");
+        $$('#textShareLevel').text("Share");
+        $$('#textBeginnerCongradulationsTitle').text("Congradulations!");
+        $$('#textBlockTitleCongrads').text("Viva!");
+        $$('#textSuccessfulTraining').text("You have successfully completed training!");
+        $$('#congradulationsPopupDistance').text("Distance");
+        $$('#congradulationsPopupAverageSpeed').text("Average speed");
+        $$('#congradulationsPopupTime').text("Time");
+        $$('#trackerPopupDisclaimer').text("For correct operation of the program, do not put the device into sleep mode");
+        $$('#beginnerPopupDisclaimer').text("For correct operation of the program, do not put the device into sleep mode");
+        $$('#textFreeSuccessShare').text("Share");
+        $$('#textCongradulationsTitle').text("Congradulations!");
+        $$('#textBlockTitleCongradulations').text("Viva!");
+        $$('#textSuccessfulFreeTraining').text("You have successfully completed training!");
+        $$('#congradulationsDistance').text("Distance");
+        $$('#congradulationsAverageSpeed').text("Average speed");
+        $$('#congradulationsTime').text("Time");
 
 
         $$('#textLanguageScreenLanguage').text("Language and units");
@@ -588,12 +717,27 @@ function updateLanguage() {
         textBeginnerMale = "beginner";
         textIntermediateMale = "intermediate";
         textProMale = "pro";
-        textBeginnerFemale = "beginner";
-        textIntermediateFemale = "intermediate";
-        textProFemale = "pro";
+        textBeginnerFemale = "cutie";
+        textIntermediateFemale = "bombshell";
+        textProFemale = "princess";
         newsLanguage = "eng";
         textEasyStart = "Easy start";
         textEasyStartDescription = '<p>For many, running is hard, exhausting work that brings neither joy nor pleasure. To start running, we have to overcome such a powerful factor as our own laziness. For many of us, the hardest part in running is getting off the couch. In addition, you have to change the usual rhythm of life.</p><p>It is difficult not only to start running, but not to give up after the first week of training. Mark Twain said: “Nothing is easier than quitting. I have done it a hundred times.” By exerting willpower, you can force yourself to do months and even years. But, apart from negative emotions, one can hardly count on any positive result.</p><p>We believe that sport is an inexhaustible source of joy and positive. Therefore, in order to teach people to experience happiness from running, we have developed this system of training. This program is designed to create a positive motivation for sports. It is based on modern scientific data from international studies on the effect of physical activity on a person’s emotional state.</p><p>You can run at any time, at any speed and at any pace. Your goal is to reach the target value of dopamine "hormone of joy". A high level of dopamine will create conditions for fixing positive emotions and forming a habit.</p><p>Start right now! Seriously, a little bit more and it may be too late.</p>';
+        textForShareFemale = "I have successfully completed training with SynRun, by running";
+        textForShareMale = "I have successfully completed training with SynRun, by running";
+        textInZa = "in";
+        textForLevelShareFemale = "SynRun thinks, I'm";
+        textForLevelShareMale = "SynRun thinks, I'm";
+        textRatingWouldYouMind = "Would you mind rating SynRun?";
+        textRatingMessage = "It won’t take more than a minute and helps to promote our app. Thanks for your support!";
+        textRatingCancelButton = "No, Thanks";
+        textRatingRemindMeLater = "Remind Me Later";
+        textRatingRateItNow = "Rate It Now";
+        textRatingYes = "Yes!"
+        textRatingNotReally = "Not really";
+        textRatingDoYouLike = "Do you like using SynRun?";
+        textRatingFeedBack = "Mind giving us some feedback?";
+
     }
 
     else {

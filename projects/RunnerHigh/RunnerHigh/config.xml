@@ -105,4 +105,7 @@
   <plugin name="cordova-plugin-apprate" spec="~1.4.0" src="https://github.com/pushandplay/cordova-plugin-apprate" />
   <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" src="C:\gitrepository\cordova-plugin-inappbrowser-3.0.0" />
   <plugin name="cordova-plugin-vibration" spec="~3.1.0" />
+  <plugin name="cordova-plugin-dialogs" spec="~2.0.1" />
+  <plugin name="cordova-plugin-nativestorage" spec="~2.3.2" />
+  <plugin name="cordova-plugin-insomnia" spec="~4.3.0" src="https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin" />
 </widget>

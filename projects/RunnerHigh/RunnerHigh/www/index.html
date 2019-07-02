@@ -184,17 +184,25 @@
                     <div class="page-content">
                         <div class="block-title" id="textCurrentLevel">Current level</div>
                         <div id="level" class="block block-strong">
-                            <div id="currentlevel" class="row block">
-                                <div class="col-50" id="textCurrentLevelDots">
-                                    Current level:
-                                </div>
-                                <div id="currentlevelvalue" class="col-50">
+                            <div id="currentlevel" class="block">
+                                <div class="row">
+                                    <div class="col-50" id="textCurrentLevelDots">
+                                        Current level:
+                                    </div>
+                                    <div id="currentlevelvalue" class="col-50">
 
+                                    </div>
                                 </div>
 
                             </div>
                             <div class="progressbar" data-progress="20" id="levelprogressbar"><span></span></div>
-
+                            <br>
+                            <div class="row">
+                                <div class="col-50"></div>
+                                <div class="col-50 text-align-right">
+                                    <a href="#" class="link" id="textShareLevel">Share</a>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="block-title" id="textTotal">Total</div>
@@ -398,6 +406,10 @@
                                 </div>
                             </div>
 
+
+                        </div>
+                        <div class="block block-strong text-align-center">
+                            <div id="trackerPopupDisclaimer">For correct operation of the program, do not put the device into sleep mode</div>
                         </div>
                         <div id="fabstop" class="fab fab-extended fab-center-bottom">
                             <a href="#">
@@ -470,8 +482,11 @@
                                     <p id="textBeginnerPopUpTargetDopamine">Target Dopamine</p>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
+                        <div class="block block-strong text-align-center">
+                            <div id="beginnerPopupDisclaimer">For correct operation of the program, do not put the device into sleep mode</div>
+                        </div>
                     </div>
                     <div id="beginnerfab" class="fab fab-extended fab-center-bottom">
                         <a href="#">
@@ -485,7 +500,105 @@
     </div>
 
 
+    <!-- Congradulations beginner popup -->
+    <div class="popup" id="beginner-congradulations-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
 
+                        <div class="title" id="textBeginnerCongradulationsTitle">Congradulations!</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="block-title" id="textBlockTitleCongrads">Viva!</div>
+                    <div class="block block-strong">
+                        <div id="textSuccessfulTraining" align="center">You have successfully completed training!</div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsPopupDistance">Distance</div>
+                            <div class="col-50 text-align-center" id="congradulationsPopupDistanceValue"></div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsPopupAverageSpeed">Average Speed</div>
+                            <div class="col-50 text-align-center" id="congradulationsPopupAverageSpeedValue"></div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsPopupTime">Time</div>
+                            <div class="col-50 text-align-center" id="congradulationsPopupTimeValue"></div>
+                        </div>
+                        <br>
+
+                    </div>
+                    <div class="block">
+                    <div class="row">
+                        <div class="col-50">
+                            <a href="#" class="button button-fill button-round button-large" id="textSuccessShare">Share!</a>
+                        </div>
+                        <div class="col-50">
+                            <a href="#" class="button button-fill button-round button-large" id="textSuccessClose">Ok</a>
+                        </div>
+                    </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Congradulations popup -->
+    <div class="popup" id="congradulations-popup">
+        <div class="view">
+            <div class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+
+                        <div class="title" id="textCongradulationsTitle">Congradulations!</div>
+
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="block-title" id="textBlockTitleCongradulations">Viva!</div>
+                    <div class="block block-strong">
+                        <div id="textSuccessfulFreeTraining" align="center">You have successfully completed training!</div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsDistance">Distance</div>
+                            <div class="col-50 text-align-center" id="congradulationsDistanceValue"></div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsAverageSpeed">Average Speed</div>
+                            <div class="col-50 text-align-center" id="congradulationsAverageSpeedValue"></div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-50 text-align-center" id="congradulationsTime">Time</div>
+                            <div class="col-50 text-align-center" id="congradulationsTimeValue"></div>
+                        </div>
+                        <br>
+
+                    </div>
+                    <div class="block">
+                        <div class="row">
+                            <div class="col-50">
+                                <a href="#" class="button button-fill button-round button-large" id="textFreeSuccessShare">Share!</a>
+                            </div>
+                            <div class="col-50">
+                                <a href="#" class="button button-fill button-round button-large" id="textFreeSuccessClose">Ok</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
 
     <!-- Login Screen -->
     <div class="login-screen" id="my-login-screen">
