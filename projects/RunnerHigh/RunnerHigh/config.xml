@@ -108,4 +108,6 @@
   <plugin name="cordova-plugin-dialogs" spec="~2.0.1" />
   <plugin name="cordova-plugin-nativestorage" spec="~2.3.2" />
   <plugin name="cordova-plugin-insomnia" spec="~4.3.0" src="https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin" />
+  <plugin name="cordova-plugin-device" spec="~2.0.3" />
+  <plugin name="cordova-plugin-background-mode" spec="~0.7.0" src="C:\gitrepository\cordova-plugin-background-mode-0.7.0" />
 </widget>

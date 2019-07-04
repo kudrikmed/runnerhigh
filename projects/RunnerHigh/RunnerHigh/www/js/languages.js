@@ -49,6 +49,9 @@ var textForShareMale = "I have successfully completed training with SynRun, by r
 var textInZa = "in";
 var textForLevelShareFemale = "SynRun thinks, I'm";
 var textForLevelShareMale = "SynRun thinks, I'm";
+var textShare = "Share";
+var textTryProgramm = "To get all the benefits of SynRun, try one of the workout ";
+var textTryProgrammHref = "programms";
 
 
 var textRatingWouldYouMind = "Would you mind rating SynRun?";
@@ -60,7 +63,11 @@ var textRatingYes = "Yes!"
 var textRatingNotReally = "Not really";
 var textRatingDoYouLike = "Do you like using SynRun?";
 var textRatingFeedBack = "Mind giving us some feedback?";
-
+var textFirstAchievementName = "Started";
+var textFirstAchievementDescription = "Nobody believed in me, but I did it";
+var textAchievementsNotYet = "Not yet";
+var textShareFirstAchievementMale = "I started running with SynRun";
+var textShareFirstAchievementFemale = "I started running with SynRun";
 
 if (language.indexOf("ru") > -1) {
     // русский
@@ -206,7 +213,7 @@ if (language.indexOf("ru") > -1) {
     textErrorDuringRegistration = "Ошибка в ходе регистрации!";
     textBeginnerMale = "симпатяга";
     textIntermediateMale = "красавчик";
-    textProMale = "как Бред Пит, чтолько лучше";
+    textProMale = "как Бред Пит, только лучше";
     textBeginnerFemale = "обаяшка";
     textIntermediateFemale = "красотка";
     textProFemale = "топчик";
@@ -227,7 +234,14 @@ if (language.indexOf("ru") > -1) {
     textRatingNotReally = "Не особенно";
     textRatingDoYouLike = "Нравится пользоваться SynRun?";
     textRatingFeedBack = "Хотите сообщить нам замечания?";
-
+    textFirstAchievementName = "Начали";
+    textFirstAchievementDescription = "Никто в меня не верил, а у меня получилось";
+    textAchievementsNotYet = "Пока еще нет";
+    textShare = "Рассказать";
+    textShareFirstAchievementMale = "Я начал бегать с SynRun";
+    textShareFirstAchievementFemale = "Я начала бегать с SynRun";
+    textTryProgramm = "Чтобы получить все преимущества SynRun, попробуйте одну из ";
+    textTryProgrammHref = "программ тренировок";
 }
 
 if (language.indexOf("en") > -1) {
@@ -396,7 +410,14 @@ if (language.indexOf("en") > -1) {
     textRatingNotReally = "Not really";
     textRatingDoYouLike = "Do you like using SynRun?";
     textRatingFeedBack = "Mind giving us some feedback?";
-
+    textFirstAchievementName = "Started";
+    textFirstAchievementDescription = "Nobody believed in me, but I did it";
+    textAchievementsNotYet = "Not yet";
+    textShare = "Share";
+    textShareFirstAchievementMale = "I started running with SynRun";
+    textShareFirstAchievementFemale = "I started running with SynRun";
+    textTryProgramm = "To get all the benefits of SynRun, try one of the workout ";
+    textTryProgrammHref = "programms";
 
 }
 
@@ -549,7 +570,7 @@ function updateLanguage() {
         textErrorDuringRegistration = "Ошибка в ходе регистрации!";
         textBeginnerMale = "симпатяга";
         textIntermediateMale = "красавчик";
-        textProMale = "как Бред Пит, чтолько лучше";
+        textProMale = "как Бред Пит, только лучше";
         textBeginnerFemale = "обаяшка";
         textIntermediateFemale = "красотка";
         textProFemale = "топчик";
@@ -570,6 +591,14 @@ function updateLanguage() {
         textRatingNotReally = "Не особенно";
         textRatingDoYouLike = "Нравится пользоваться SynRun?";
         textRatingFeedBack = "Хотите сообщить нам замечания?";
+        textFirstAchievementName = "Начали";
+        textFirstAchievementDescription = "Никто в меня не верил, а у меня получилось";
+        textAchievementsNotYet = "Пока еще нет";
+        textShare = "Рассказать";
+        textShareFirstAchievementMale = "Я начал бегать с SynRun";
+        textShareFirstAchievementFemale = "Я начала бегать с SynRun";
+        textTryProgramm = "Чтобы получить все преимущества SynRun, попробуйте одну из ";
+        textTryProgrammHref = "программ тренировок";
     }
 
     if (language.indexOf("en") > -1) {
@@ -737,6 +766,14 @@ function updateLanguage() {
         textRatingNotReally = "Not really";
         textRatingDoYouLike = "Do you like using SynRun?";
         textRatingFeedBack = "Mind giving us some feedback?";
+        textFirstAchievementName = "Started";
+        textFirstAchievementDescription = "Nobody believed in me, but I did it";
+        textAchievementsNotYet = "Not yet";
+        textShare = "Share";
+        textShareFirstAchievementMale = "I started running with SynRun";
+        textShareFirstAchievementFemale = "I started running with SynRun";
+        textTryProgramm = "To get all the benefits of SynRun, try one of the workout ";
+        textTryProgrammHref = "programms";
 
     }
 

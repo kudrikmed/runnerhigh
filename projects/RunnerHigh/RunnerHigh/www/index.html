@@ -139,7 +139,7 @@
                         <span class="tabbar-label" id="textTabProgramms">Programms</span>
                     </a>
                     <a href="#view-profile" class="tab-link">
-                        <i class="icon f7-icons ios-only">personr</i>
+                        <i class="icon f7-icons ios-only">person</i>
                         <i class="icon f7-icons ios-only icon-ios-fill">person</i>
                         <i class="icon material-icons md-only">person</i>
                         <span class="tabbar-label" id="textTabProfile">Profile</span>
@@ -182,75 +182,135 @@
                         </div>
                     </div>
                     <div class="page-content">
-                        <div class="block-title" id="textCurrentLevel">Current level</div>
-                        <div id="level" class="block block-strong">
-                            <div id="currentlevel" class="block">
-                                <div class="row">
-                                    <div class="col-50" id="textCurrentLevelDots">
-                                        Current level:
-                                    </div>
-                                    <div id="currentlevelvalue" class="col-50">
 
-                                    </div>
+                        <div class="card">
+                            <div class="card-header" id="textCurrentLevel"></div>
+                            <div class="card-content">
+                                <div class="list media-list">
+                                    <ul>
+                                        <li class="item-content">
+                                            <div class="item-media">
+
+                                                <i class="icon f7-icons text-color-primary text-size-44">person</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textCurrentLevelDots"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="currentlevelvalue"></div>
+                                              
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="progressbar" data-progress="20" id="levelprogressbar"><span></span></div>
+                                        </li>
+                                    </ul>
                                 </div>
 
                             </div>
-                            <div class="progressbar" data-progress="20" id="levelprogressbar"><span></span></div>
-                            <br>
-                            <div class="row">
-                                <div class="col-50"></div>
-                                <div class="col-50 text-align-right">
-                                    <a href="#" class="link" id="textShareLevel">Share</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="block-title" id="textTotal">Total</div>
-                        <div id="total" class="block block-strong">
-
-                            <div id="totaldistance" class="row block">
-                                <div class="col-50" id="textTotalDistance">
-                                    Total distance:
-                                </div>
-                                <div id="totaldistancevalue" class="col-50">
-
-                                </div>
-                            </div>
-
-                            <div id="trainings" class="row block">
-                                <div class="col-50" id="textTotalAmountOfTrainings">
-                                    Total amount of trainings:
-                                </div>
-                                <div id="trainingsvalue" class="col-50">
-
-                                </div>
-                            </div>
-
-                            <div id="caloriesburned" class="row block">
-                                <div class="col-50" id="textCaloriesBurned">
-                                    Calories burned:
-                                </div>
-                                <div id="caloriesburnedvalue" class="col-50">
-
-                                </div>
-
-                            </div>
-
-                            <div id="fatburned" class="row block">
-                                <div class="col-50" id="textFatBurned">
-                                    Fat burned:
-                                </div>
-                                <div id="fatburnedvalue" class="col-50">
-
-                                </div>
+                            <div class="card-footer">
+                                <a href="#" class="link" id="textShareLevel">Share</a>
 
                             </div>
                         </div>
+
+                        <div class="card">
+                            <div class="card-header" id="textTotal"></div>
+                            <div class="card-content">
+                               
+                                   
+                                <div class="list media-list">
+                                    <ul>
+
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons text-color-primary text-size-44">placemark</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textTotalDistance"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="totaldistancevalue"></div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons text-color-primary text-size-44">stopwatch</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textTotalAmountOfTrainings"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="trainingsvalue"></div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                                <i class="icon f7-icons text-color-primary text-size-44">fire</i>
+                               
+                                     
+
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textCaloriesBurned"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="caloriesburnedvalue"></div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="item-content">
+                                            <div class="item-media">
+                                            <i class="icon f7-icons text-color-primary text-size-44">thumbs_up</i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title" id="textFatBurned"></div>
+                                                </div>
+                                                <div class="item-subtitle" id="fatburnedvalue"></div>
+
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                  
+
+                            </div>
+                   
+                        </div>
+
                         <div class="block-title" id="textMyAchievements">My achievements</div>
-                        <div id="achievements" class="block block-strong"></div>
-                    </div>
-                </div>
-            </div>
+                        <div id="achievements" class="block block-strong">
+
+                            <div class="list media-list">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="item-link item-content">
+                                            <div class="item-media"><img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80" /></div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title">Yellow Submarine</div>
+                                                    <div class="item-after">$15</div>
+                                                </div>
+                                                <div class="item-subtitle">Beatles</div>
+                                                <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
             <!-- Tracker View -->
             <div id="view-runtracker" class="view tab">
                 <div class="page" data-name="runtracker">
@@ -300,14 +360,23 @@
                         </div>
                     </div>
                     <div class="page-content">
+                        <div class="block block-strong">
                         <div class="row">
-                            <div class="col-25">
+                            <div class="col-50">
 
                             </div>
-                            <div class="col-75">
-                                <div id="username" class="block block-strong">My name</div>
+                            <div class="col-50">
+                                <div class="chip">
+                                    <div class="chip-media bg-color-primary">
+                                        <i class="icon f7-icons if-not-md">person</i>
+                                        <i class="icon material-icons md-only">person</i>
+                                    </div>
+                                    <div class="chip-label" id="username">My name</div>
+                                </div>
                             </div>
-                        </div>
+                                  
+                                </div>
+                           </div>
 
                         <div class="block-title" id="textParameters">Parameters</div>
                         <div id="parameters" class="block block-strong">
@@ -585,6 +654,9 @@
                         <br>
 
                     </div>
+                    <div class="block block-strong text-align-center">
+                        <span id="congradulationsUseProgramms">To get all the benefits of SynRun, try one of the workout </span><a href="#" id="congradulationsUseProgrammsHref">programms</a>
+                    </div>
                     <div class="block">
                         <div class="row">
                             <div class="col-50">
@@ -604,7 +676,7 @@
     <div class="login-screen" id="my-login-screen">
         <div class="view">
             <div class="page">
-                <div class="page-content login-screen-content">
+                <div class="page-content login-screen-content" style="background-image: url(images/running.gif);">
                     <div class="login-screen-title" id="textLoginScreenLogin">Login</div>
                     <div class="list">
                         <ul>

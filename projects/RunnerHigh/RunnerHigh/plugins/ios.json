@@ -57,6 +57,9 @@
         },
         "cordova-plugin-insomnia": {
             "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-background-mode": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
         }
     },
     "dependent_plugins": {
@@ -73,6 +76,9 @@
             "PACKAGE_NAME": "com.cordova.runnerhigh"
         },
         "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.cordova.runnerhigh"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "com.cordova.runnerhigh"
         }
     }
